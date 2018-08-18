@@ -15,7 +15,7 @@ echo "##################################################"
 echo "Latest possible version of polybar"
 echo "##################################################"
 
-sudo apt install python-dev python-pip libffi-dev build-essential virtualenvwrapper
+sudo apt install -y python-dev python-pip libffi-dev build-essential virtualenvwrapper
 
 pip install virtualfish
 

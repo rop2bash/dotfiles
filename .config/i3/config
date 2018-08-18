@@ -44,7 +44,7 @@ for_window [instance="quick"] floating enable sticky enable
 for_window [instance="quick"] resize set 900 400
 for_window [instance="quick"] move to position $xpos $ypos
 for_window [instance="quick"] move scratchpad
-exec $psst $dropterm -n quick -e fish
+exec $psst $dropterm -n quick
 
 for_window [instance="ipy"] floating enable sticky enable
 for_window [instance="ipy"] resize set 900 400
@@ -131,7 +131,7 @@ client.placeholder          $bg     $bg         $bg     $bg
 
 
 ###---ALT Bindings---###
-bindsym $alt+Return             exec $psst $term -e fish
+bindsym $alt+Return             exec $psst $term
 bindsym $alt+Shift+Return       exec $psst $term -e ipython
 
 bindsym $alt+a                  focus parent

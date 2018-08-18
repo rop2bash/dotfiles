@@ -11,25 +11,25 @@ echo "##################################################"
 echo "Latest possible version of polybar"
 echo "##################################################"
 
-sudo apt install cmake cmake-data pkg-config libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+sudo apt install -y cmake cmake-data pkg-config libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
 
-sudo apt install libxcb-xkb-dev
+sudo apt install -y libxcb-xkb-dev
 
-sudo apt install libxcb-xrm-dev
+sudo apt install -y libxcb-xrm-dev
 
-sudo apt install libxcb-cursor-dev
+sudo apt install -y libxcb-cursor-dev
 
-sudo apt install libasound2-dev
+sudo apt install -y libasound2-dev
 
-sudo apt install libpulse-dev
+sudo apt install -y libpulse-dev
 
-sudo apt install libjsoncpp-dev
+sudo apt install -y libjsoncpp-dev
 
-sudo apt install libmpdclient-dev
+sudo apt install -y libmpdclient-dev
 
-sudo apt install libcurl4-openssl-dev
+sudo apt install -y libcurl4-openssl-dev
 
-sudo apt install libiw-dev libnl-3-dev
+sudo apt install -y libiw-dev libnl-3-dev
 
 # installing polybar
 
