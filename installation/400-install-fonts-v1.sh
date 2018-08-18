@@ -27,7 +27,7 @@ else
     echo "The font is not currently installed, would you like to install it now? (y/n)";
     read response
     if [[ "$response" =~ ^(yes|y)$ ]]; then
-        sudo apt install $FONT  
+        sudo apt install -y $FONT  
         if fc-list | grep -i "fontawesome" >/dev/null; then
             echo "################################################################" 
             echo "The font was sucessfully installed!";
