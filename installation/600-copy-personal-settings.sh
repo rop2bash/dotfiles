@@ -1,17 +1,5 @@
 #!/bin/bash
 set -e
-#
-##################################################################################################################
-# Written to be used on 64 bits computers
-# Author 	: 	Erik Dubois
-# Website 	: 	http://www.erikdubois.be
-##################################################################################################################
-##################################################################################################################
-#
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
-#
-##################################################################################################################
-
 
 echo "Creating all folders IF they do not exist already"
 
@@ -23,7 +11,7 @@ echo "Creating all folders IF they do not exist already"
 [ -d $HOME"/Desktop" ] || mkdir -p $HOME"/Desktop"
 [ -d $HOME"/Documents" ] || mkdir -p $HOME"/Documents"
 [ -d $HOME"/Downloads" ] || mkdir -p $HOME"/Downloads"
-[ -d $HOME"/DATA" ] || mkdir -p $HOME"/DATA"
+[ -d $HOME"/Apps" ] || mkdir -p $HOME"/Apps"
 [ -d $HOME"/Music" ] || mkdir -p $HOME"/Music"
 [ -d $HOME"/Pictures" ] || mkdir -p $HOME"/Pictures"
 [ -d $HOME"/Videos" ] || mkdir -p $HOME"/Videos"

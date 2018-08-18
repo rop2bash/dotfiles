@@ -1,17 +1,14 @@
 #!/bin/bash
 set -e
-##################################################################################################################
-#
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. AT YOUR OWN RISK.
-#
-##################################################################################################################
 
 echo "#########################################################"
 echo "General software"
 echo "#########################################################"
 
+sudo apt update -y
+sudo apt upgrade -y
 
-#sudo apt install -y firefox
+sudo apt install -y chromium-browser
 sudo apt install -y gimp 
 sudo apt install -y inkscape 
 sudo apt install -y meld 
@@ -87,9 +84,6 @@ sudo apt-get install -y gnome-screenshot
 
 # nitrogen
 sudo apt-get install -y nitrogen
-
-# chromium
-sudo apt-get install -y chromium-browser
 
 # playerctl for music
 #https://github.com/acrisci/playerctl/releases
