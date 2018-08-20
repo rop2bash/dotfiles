@@ -8,6 +8,7 @@ echo "###################################################"
 sudo apt install -y python-dev python-pip libffi-dev build-essential virtualenvwrapper
 
 pip3 install setuptools
+pip install setuptools
 pip install virtualfish
 
 ### Angr on virtualenv
@@ -24,8 +25,10 @@ cd /tmp/aquynh
 
 ./make.sh
 sudo ./make.sh install
+cd bindings/python
+sudo make install
 
-rm -rf /tmp/aquynh
+sudo rm -rf /tmp/aquynh
 
 ### Binwalk
 rm -rf /tmp/ReFirmLabs
@@ -36,7 +39,7 @@ cd /tmp/ReFirmLabs
 sudo apt install -y python-lzma
 sudo python setup.py install
 
-rm -rf /tmp/ReFirmLabs
+sudo rm -rf /tmp/ReFirmLabs
 
 ### Z3 solver
 rm -rf /tmp/Z3Prover
@@ -44,12 +47,12 @@ rm -rf /tmp/Z3Prover
 git clone https://github.com/Z3Prover/z3 /tmp/Z3Prover
 cd /tmp/Z3Prover
 
-python script/mk_make.py --python
+python scripts/mk_make.py --python
 cd build
 make -j8
 sudo make install
 
-rm -rf /tmp/Z3Prover
+sudo rm -rf /tmp/Z3Prover
 
 ### Radare2
 sudo apt install -y radare2
