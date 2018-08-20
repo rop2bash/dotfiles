@@ -11,6 +11,7 @@ set $term gnome-terminal
 set $dropterm st
 set $lockscreen ~/.config/i3/walls/lock.png
 set $wallpaper ~/.config/i3/walls/wall.png
+set $browser chromium-browser
 font pango:Roboto 8
 floating_modifier $alt
 
@@ -181,7 +182,7 @@ bindsym $alt+u                  resize shrink width 10 px or 10 ppt
 
 bindsym $alt+v                  split v
 
-#bindsym $alt+w
+bindsym $alt+w 					exec $psst $browser
 
 #bindsym $alt+x
 
