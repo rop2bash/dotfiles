@@ -6,11 +6,6 @@ set -e
 ##################################################################################################################
 
 echo "################################################################"
-echo "This script will copy/paste all the i3 configuration files "
-echo "to the ~/.config/i3 folder."
-
-
-echo "################################################################"
 echo "Checking presence of lsb-release and install it when missing"
 
 	if ! location="$(type -p "lsb_release")" || [ -z "lsb_release" ]; then
@@ -43,99 +38,6 @@ DISTRO=$(lsb_release -si)
 
 echo "################################################################"
 echo "You are working on " $DISTRO
-
-
-
-
-##################################################################################################################
-########################                    S O F T W A R E                             ##########################
-##################################################################################################################
-
-
-
-
-echo "################################################################"
-echo "Checking if git is installed and install it if it is not installed yet."
-
-
-
-case $DISTRO in 
-
-	LinuxMint|linuxmint|Ubuntu|ubuntu)
-
-		echo "Installing software for "$DISTRO
-
-		# check if git is installed
-		if ! location="$(type -p "git")" || [ -z "git" ]; then
-
-			echo "################################################################"
-			echo "installing git for this script to work"
-
-
-		   	sudo apt-get install -y git
-
-		  else
-		  	echo "################################################################"
-		  	echo "git was already installed. Proceeding..."
-		fi
-
-	
-		;;
-
-	Arch|arch)
-		echo "################################################################"
-		echo "Installing software for "$DISTRO
-
-		if ! location="$(type -p "git")" || [ -z "git" ]; then
-
-			echo "################################################################"
-			echo "installing git for this script to work"
-
-
-		  	sudo pacman -S --noconfirm git
-
-		  else
-		  	echo "################################################################"
-		  	echo "git was already installed. Proceeding..."
-
-
-		fi
-
-		;;
-
-	Solus|solus)
-		echo "################################################################"
-		echo "Installing software for "$DISTRO
-
-		if ! location="$(type -p "git")" || [ -z "git" ]; then
-
-			echo "################################################################"
-			echo "installing git for this script to work"
-
-
-		  	sudo eopkg install -y git
-
-		  else
-		  	echo "################################################################"
-		  	echo "git was already installed. Proceeding..."
-
-
-		fi
-		;;
-
-
-
-
-	*)
-		echo "################################################################"
-		echo "There were no installation lines for your distro " $DISTRO
-
-		;;
-esac
-
-
-
-
 
 ##################################################################################################################
 ###################### C H E C K I N G   E X I S T E N C E   O F   F O L D E R S            ######################
@@ -182,9 +84,6 @@ fi
 cp -rf ../.config/i3 ~/.config/
 cp -rf ../.config/polybar ~/.config/
 
-echo "################################################################"
-echo "In this hidden folder ~/.config/i3 you will find"
-echo "the most recent configs."
 echo "################################################################"
 echo "##############  LOG OFF AND LOG ON WITH I3     #################"
 echo "################################################################"

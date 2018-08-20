@@ -1,17 +1,21 @@
 #!/bin/bash
 
+echo "###################################################"
+echo "##############     Installing CTF env     #################"
+echo "###################################################"
+
 ### Virual Environmets
 sudo apt install -y python-dev python-pip libffi-dev build-essential virtualenvwrapper
 
 pip install virtualfish
 
-cp ../.config/fish ~/.config/
+cp -rf ../../.config/fish ~/.config/
 
 ### Angr on virtualenv
-fish -c "vf new angr; pip install angr; deactivate; exit"
+#fish -c "vf new angr; pip install angr; deactivate; exit"
 
 ## Pwntools on virtualenv
-fish -c "vf new pwn; pip install pwntools; deactivate; exit"
+#fish -c "vf new pwn; pip install pwntools; deactivate; exit"
 
 ### Capstone
 rm -rf /tmp/aquynh
@@ -41,7 +45,7 @@ rm -rf /tmp/Z3Prover
 git clone https://github.com/Z3Prover/z3 /tmp/Z3Prover
 cd /tmp/Z3Prover
 
-python script/mk_make.py
+python script/mk_make.py --python
 cd build
 make -j8
 sudo make install
