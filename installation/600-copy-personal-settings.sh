@@ -32,6 +32,16 @@ echo "Copy/pasting gimp scripts and themes"
 cp settings/gimp/scripts/* ~/.gimp-2.8/scripts/
 cp -r settings/gimp/themes/* ~/.gimp-2.8/themes/
 
+# wal
+rm -rf /tmp/rop2bash
+
+git clone https://github.com/rop2bash/pywal /tmp/rop2bash
+cd /tmp/rop2bash
+
+pip3 install .
+
+rm -r /tmp/rop2bash
+
 echo "################################################################"
 echo "#########       personal settings installed     ################"
 echo "################################################################"

@@ -22,20 +22,19 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 2
+#smart_gaps on
+smart_borders on
 
 hide_edge_borders both
 new_window      normal
 new_float       normal
-
-#smart_gaps on
-smart_borders on
 
 ###---Autostart---###
 exec $psst              compton -bcf -i 0.7
 exec $psst              redshift
 exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
-exec $psst				wal -i $colorbg
+exec $psst				wal -i $colorbg -n
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
 
 
