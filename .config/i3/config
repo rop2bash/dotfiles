@@ -35,6 +35,7 @@ exec $psst              redshift
 exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
 exec $psst				wal -i $colorbg -n
+exec $psst				spotify
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
 
 
@@ -46,7 +47,7 @@ for_window [instance="quick"] floating enable sticky enable
 for_window [instance="quick"] resize set 900 400
 for_window [instance="quick"] move to position $xpos $ypos
 for_window [instance="quick"] move scratchpad
-exec $psst $dropterm -name quick -e tmux
+exec $psst $dropterm -name quick
 
 for_window [instance="ipy"] floating enable sticky enable
 for_window [instance="ipy"] resize set 900 400
@@ -57,7 +58,7 @@ exec $psst $dropterm -name ipy -e ipython
 
 ###---Workspace Bindings---###
 set $ws1 "1  "
-set $ws2 "2"
+set $ws2 "2 "
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -69,7 +70,7 @@ set $ws0 "0"
 
 # switch to workspace
 bindsym $alt+1          workspace $ws1
-bindsym $alt+2          workspace $ws2
+bindsym $alt+2          workspace $ws2; focus
 bindsym $alt+3          workspace $ws3
 bindsym $alt+4          workspace $ws4
 bindsym $alt+5          workspace $ws5
@@ -90,6 +91,12 @@ bindsym $alt+Shift+7    move container to workspace $ws7
 bindsym $alt+Shift+8    move container to workspace $ws8
 bindsym $alt+Shift+9    move container to workspace $ws9
 bindsym $alt+Shift+0    move container to workspace $ws10
+
+###---Workspace specific Apps---###
+
+# spotify
+assign [class="Spotify|spotify"] → $ws2
+for_window [class="Spotify"] move to workspace $ws2
 
 ###---System Mode---###
 set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
@@ -210,6 +217,19 @@ bindsym $alt+Shift+Up           move up
 bindsym $alt+Right              focus right
 bindsym $alt+Shift+Right        move right
 
+
+###---Special Bindings---###
+bindsym XF86AudioRaiseVolume 		exec $psst "amixer -D pulse sset Master '5%+'"
+bindsym XF86AudioLowerVolume 		exec $psst "amixer -D pulse sset Master '5%-'"
+bindsym XF86AudioMute 				exec $psst "amixer -D pulse set Master toggle"
+
+bindsym XF86AudioPlay 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioNext 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym XF86AudioPrev 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioStop 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+
+bindsym XF86MonBrightnessUp 		exec $psst xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown 		exec $psst xbacklight -dec 20 # decrease screen brightness
 
 ###---System Bindings---###
 bindsym $sup+Shift+l            exec $psst "i3lock -i $lockscreen"
