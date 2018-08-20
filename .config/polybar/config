@@ -58,9 +58,10 @@ module-margin-right = 2
 
 font-0 = FontAwesome;pixelsize=5
 font-1 = Roboto Mono for Powerline:pixelsize=10:weight=bold;0
+font-2 = Noto Sans CJK JP:size=10:antialias=true;0
 
 modules-left = i3
-modules-center = xwindow
+modules-center = spotify xwindow
 modules-right = volume memory cpu wlan battery date time powermenu
 
 tray-position = right
@@ -269,6 +270,14 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python3 ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
 
 [module/temperature]
 type = internal/temperature
