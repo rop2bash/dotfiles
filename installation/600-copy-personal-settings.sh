@@ -35,6 +35,7 @@ cp -r settings/gimp/themes/* ~/.gimp-2.8/themes/
 # wal
 rm -rf /tmp/rop2bash
 
+pip3 install setuptools
 git clone https://github.com/rop2bash/pywal /tmp/rop2bash
 cd /tmp/rop2bash
 
