@@ -9,8 +9,6 @@ sudo apt install -y python-dev python-pip libffi-dev build-essential virtualenvw
 
 pip install virtualfish
 
-cp -rf ../../.config/fish ~/.config/
-
 ### Angr on virtualenv
 #fish -c "vf new angr; pip install angr; deactivate; exit"
 
