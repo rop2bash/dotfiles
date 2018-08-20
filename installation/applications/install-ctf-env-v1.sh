@@ -7,6 +7,7 @@ echo "###################################################"
 ### Virual Environmets
 sudo apt install -y python-dev python-pip libffi-dev build-essential virtualenvwrapper
 
+pip3 install setuptools
 pip install virtualfish
 
 ### Angr on virtualenv

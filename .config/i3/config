@@ -7,10 +7,11 @@
 set $alt Mod1
 set $sup Mod4
 set $psst --no-startup-id
-set $term gnome-terminal
-set $dropterm st
-set $lockscreen ~/.config/i3/walls/lock.png
+set $term "gnome-terminal --hide-menubar"
+set $dropterm urxvt
 set $wallpaper ~/.config/i3/walls/wall.png
+set $lockscreen ~/.config/i3/walls/lock.png
+set $colorbg ~/.config/i3/walls/color.png
 set $browser chromium-browser
 font pango:Roboto 8
 floating_modifier $alt
@@ -34,6 +35,7 @@ exec $psst              compton -bcf -i 0.7
 exec $psst              redshift
 exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
+exec $psst				wal -i $colorbg
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
 
 
@@ -45,13 +47,13 @@ for_window [instance="quick"] floating enable sticky enable
 for_window [instance="quick"] resize set 900 400
 for_window [instance="quick"] move to position $xpos $ypos
 for_window [instance="quick"] move scratchpad
-exec $psst $dropterm -n quick
+exec $psst $dropterm -name quick -e tmux
 
 for_window [instance="ipy"] floating enable sticky enable
 for_window [instance="ipy"] resize set 900 400
 for_window [instance="ipy"] move to position $xpos $ypos
 for_window [instance="ipy"] move scratchpad
-exec $psst $dropterm -n ipy -e ipython
+exec $psst $dropterm -name ipy -e ipython
 
 
 ###---Workspace Bindings---###
@@ -129,10 +131,11 @@ client.focused_inactive     $bg     $bg         $ac     $id
 client.urgent               $ac     $ac         $tx     $id
 #border & indicator are ignored
 client.placeholder          $bg     $bg         $bg     $bg
+client.background       	$bg
 
 
 ###---ALT Bindings---###
-bindsym $alt+Return             exec $psst $term
+bindsym $alt+Return             exec $psst $term 
 bindsym $alt+Shift+Return       exec $psst $term -e ipython
 
 bindsym $alt+a                  focus parent
@@ -172,7 +175,7 @@ bindsym $alt+p                  resize grow width 10 px or 10 ppt
 
 bindsym $alt+q                  kill
 
-bindsym $alt+r                  mode "resize"
+bindsym $alt+r                  exec $psst subl
 
 bindsym $alt+s                  layout stacking
 
