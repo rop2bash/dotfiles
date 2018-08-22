@@ -151,6 +151,8 @@ bindsym $alt+b                  border toggle
 #bindsym $alt+c
 
 bindsym $alt+d                  exec $psst i3-dmenu-desktop
+#bindsym $alt+d                  exec $psst i3-dmenu-desktop --dmenu='dmenu_run -i -nf "$WHITE" -nb "$BLACK"'
+bindsym $alt+Shift+d            exec $psst dmenu_run -nf "$WHITE" -nb "$BLACK"
 
 bindsym $alt+e                  layout toggle split
 
