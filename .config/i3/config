@@ -11,7 +11,7 @@ set $term "gnome-terminal --hide-menubar"
 set $dropterm urxvt
 set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
-set $colorbg ~/.config/i3/walls/color.png
+set $colorbg ~/.config/i3/colors/
 set $browser chromium-browser
 font pango:Roboto 8
 floating_modifier $alt
