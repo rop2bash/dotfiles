@@ -28,6 +28,8 @@ sudo ./make.sh install
 cd bindings/python
 sudo make install
 
+cd
+
 sudo rm -rf /tmp/aquynh
 
 ### Binwalk
@@ -38,6 +40,8 @@ cd /tmp/ReFirmLabs
 
 sudo apt install -y python-lzma
 sudo python setup.py install
+
+cd
 
 sudo rm -rf /tmp/ReFirmLabs
 
@@ -51,6 +55,8 @@ python scripts/mk_make.py --python
 cd build
 make -j8
 sudo make install
+
+cd
 
 sudo rm -rf /tmp/Z3Prover
 

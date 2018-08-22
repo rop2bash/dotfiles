@@ -25,6 +25,7 @@ sudo apt install -y libcurl4-openssl-dev
 
 sudo apt install -y libiw-dev libnl-3-dev
 
+sudo apt install -y rxvt-unicode
 # installing polybar
 
 rm -rf /tmp/jaagr
@@ -37,14 +38,3 @@ mkdir -p build && cd build/
 cmake .. && sudo make install
 
 rm -rf /tmp/jaagr
-
-echo "You installed the following version"
-echo
-echo
-polybar --version
-echo
-echo
-echo "##################################################"
-echo "Latest possible version of polybar installed"
-echo "##################################################"
-sleep 1
