@@ -50,30 +50,29 @@ line-color = #f00
 border-size = 1
 border-color = #00000000
 
-padding-left = 1
-padding-right = 1
+padding-left = 0
+padding-right = 0
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
-font-0 = FontAwesome
-font-1 = Roboto Mono for Powerline:pixelsize=10:weight=bold;0
-font-2 = Noto Sans CJK JP:size=10:antialias=true;0
-font-3 = Roboto Mono for Powerline:pixelsize=9;0
+font-0 = DejaVuSansMono Nerd Font:pixelsize=10:weight=bold;0
+font-1 = RobotoMono Nerd Font:pixelsize=10:weight=bold;0
+font-2 = RobotoMono:pixelsize=10;0
 
 modules-left = i3
 modules-center = spotify xwindow
-modules-right = volume memory cpu wlan battery date time powermenu
+modules-right = volume memory cpu wlan eth battery date time powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:20:...%
+label = %title:0:30:...%
 format-underline = #f17f14
 label-font = 3
 
@@ -86,7 +85,7 @@ index-sort = true
 enable-scroll = false
 
 format = <label-state>
-format-padding-right = 2
+format-padding-right = 0
 
 label-unfocused-foreground = #b1beed
 label-unfocused-padding = 1
@@ -113,31 +112,31 @@ menu-0-0 = lock
 menu-0-0-exec = "i3lock -i ~/.config/i3/walls/lock.png"
 menu-0-0-background = #312842
 menu-0-0-foreground = #c05c47
-menu-0-0-padding-right = 3
+menu-0-0-padding-right = 2
 
 menu-0-1 = reboot
 menu-0-1-exec = menu-open-1
 menu-0-1-background = #312842
 menu-0-1-foreground = #c05c47
-menu-0-1-padding-right = 3
+menu-0-1-padding-right = 2
 
 menu-0-2 = power off
 menu-0-2-exec = menu-open-2
 menu-0-2-background = #312842
 menu-0-2-foreground = #c05c47
-menu-0-2-padding-right = 3
+menu-0-2-padding-right = 2
 
 menu-1-0 = reboot?  
 menu-1-0-exec = reboot
 menu-1-0-background = #312842
 menu-1-0-foreground = #e4b226
-menu-1-0-padding-right = 3
+menu-1-0-padding-right = 2
 
 menu-2-0 = power off?  
 menu-2-0-exec = poweroff
 menu-2-0-background = #312842
 menu-2-0-foreground = #e4b226
-menu-2-0-padding-right = 3
+menu-2-0-padding-right = 1
 
 [module/cpu]
 type = internal/cpu
@@ -154,7 +153,7 @@ interval = 1
 format-prefix = ""
 format-prefix-foreground = #B06A58
 ;format-underline = #4bffdc
-label = %gb_used% (%percentage_used%%)
+label = %percentage_used%%
 label-padding = 1
 
 [module/wlan]
@@ -218,9 +217,9 @@ format-volume = <label-volume> <ramp-volume>
 label-volume-foreground = ${root.foreground}
 format-volume-padding = 1
 
-format-muted-prefix = " "
+format-muted-prefix = 
 format-muted-foreground = #C13416
-label-muted=
+label-muted="   "
 ramp-volume-0=
 ramp-volume-1=
 ramp-volume-2=
@@ -250,16 +249,16 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <label-charging> <ramp-capacity>
-format-charging-padding = 1
+format-charging-padding = 2
 format-charging-foreground = #0a6cf5
 
 format-discharging = <label-discharging> <ramp-capacity>
-format-discharging-padding = 1
+format-discharging-padding = 2
 format-discharging-foreground = #ffb52a
 
 format-full = <label-full> <ramp-capacity>
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-padding = 1
+format-full-padding = 2
 format-full-foreground = #55aa55
 
 ramp-capacity-0 = 
@@ -277,8 +276,8 @@ animation-charging-framerate = 750
 type = custom/script
 interval = 1
 format-prefix = " "
-format = %{T4}<label>%{T-}
-exec = python3 ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}' -t 20
+format = %{T3}<label>%{T-}
+exec = python3 ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}' -t 30
 format-underline = #1db954
 
 [module/temperature]
