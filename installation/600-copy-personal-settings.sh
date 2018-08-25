@@ -35,14 +35,14 @@ cp -r settings/gimp/themes/* ~/.gimp-2.8/themes/
 
 # wal
 sudo apt install -y imagemagick
-rm -rf /tmp/rop2bash
+rm -rf /tmp/dylanaraps
 
-git clone https://github.com/rop2bash/pywal /tmp/rop2bash
-cd /tmp/rop2bash
+git clone https://github.com/dylanaraps/pywal /tmp/dylanaraps
+cd /tmp/dylanaraps
 
 pip3 install .
 
-rm -rf /tmp/rop2bash
+rm -rf /tmp/dylanaraps
 
 echo "################################################################"
 echo "#########       personal settings installed     ################"
