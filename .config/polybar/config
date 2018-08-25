@@ -58,14 +58,14 @@ module-margin-right = 1
 
 font-0 = DejaVuSansMono Nerd Font:pixelsize=10:weight=bold;0
 font-1 = RobotoMono Nerd Font:pixelsize=10:weight=bold;0
-font-2 = RobotoMono:pixelsize=10;0
+font-2 = NotoSansMonoCJKJP:pixelsize=10;0
 
 modules-left = i3
 modules-center = spotify xwindow
 modules-right = volume memory cpu wlan eth battery date time powermenu
 
 tray-position = right
-tray-padding = 0
+tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -91,8 +91,10 @@ ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-default = 
 
-format = <label-state>
+format = <label-state> <label-mode>
 format-padding-right = 0
+
+label-mode = test
 
 label-unfocused = %index% %icon%
 label-unfocused-foreground = #b1beed
