@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-sleep 0.5
+sleep 0.1
 # Terminate already running bar instances
 killall -q polybar
 
