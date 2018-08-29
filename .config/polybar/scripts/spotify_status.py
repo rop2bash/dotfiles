@@ -83,5 +83,5 @@ except Exception as e:
     if isinstance(e, dbus.exceptions.DBusException):
         print('')
     else:
-        print(e)
+        print('Spotify')
 

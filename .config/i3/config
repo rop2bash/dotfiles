@@ -7,7 +7,7 @@
 set $alt Mod1
 set $sup Mod4
 set $psst --no-startup-id
-set $term "gnome-terminal --hide-menubar"
+set $term urxvt
 set $dropterm urxvt
 set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
@@ -29,11 +29,10 @@ new_window      normal
 new_float       normal
 
 ###---Autostart---###
-exec $psst              compton -bcf -i 0.7
-exec $psst              redshift
+exec_always $psst		wal -i $colorbg -n
+exec_always $psst       compton --config ~/.config/compton.conf -b
 exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
-exec $psst				wal -i $colorbg -n
 exec $psst				spotify
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
 
@@ -46,13 +45,13 @@ for_window [instance="quick"] floating enable sticky enable
 for_window [instance="quick"] resize set 900 400
 for_window [instance="quick"] move to position $xpos $ypos
 for_window [instance="quick"] move scratchpad
-exec $psst $dropterm -name quick
+exec $psst $dropterm -name "quick"
 
 for_window [instance="ipy"] floating enable sticky enable
 for_window [instance="ipy"] resize set 900 400
 for_window [instance="ipy"] move to position $xpos $ypos
 for_window [instance="ipy"] move scratchpad
-exec $psst $dropterm -name ipy -e ipython
+exec $psst $dropterm -name "ipy" -e ipython
 
 
 ###---Workspace Bindings---###
