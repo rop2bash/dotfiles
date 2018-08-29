@@ -9,12 +9,14 @@ sudo apt update -y
 sudo apt upgrade -y
 
 sudo apt install -y chromium-browser
+sudo apt install -y chrome-stable
 sudo apt install -y gimp 
 sudo apt install -y inkscape 
 sudo apt install -y meld 
 sudo apt install -y vlc 
 sudo apt install -y evolution
 sudo apt install -y python3-pip
+sudo apt install -y ipython
 
 
 

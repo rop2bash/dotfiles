@@ -24,9 +24,8 @@ echo "Creating all folders IF they do not exist already"
 echo "Change the settings later with lxappearance and qtconfig-qt4"
 
 cp settings/.gtkrc-2.0 ~/
-cp settings/bookmarks ~/.config/gtk-3.0/
 cp settings/settings.ini ~/.config/gtk-3.0/
-cp .config/compton.conf ~/.config/
+cp ../.config/compton.conf ~/.config/
 
 echo "Copy/pasting gimp scripts and themes"
 
