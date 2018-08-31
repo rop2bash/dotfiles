@@ -31,7 +31,7 @@ args = parser.parse_args()
 
 # Default parameters
 output = '{play_pause} {artist}: {song}'
-trunclen = 25
+trunclen = 30
 play_pause = u'\u25B6,\u23F8' # first character is play, second is paused
 
 # parameters can be overwritten by args
@@ -69,7 +69,7 @@ try:
     song = metadata['xesam:title']
 
     if len(song) > trunclen:
-        song = song[0:trunclen]
+        song = song[0:trunclen].strip()
         song += '...' 
         if ('(' in song) and (')' not in song):
             song += ')'
@@ -78,10 +78,9 @@ try:
     if sys.version_info.major == 3:
         print(output.format(artist=artist, song=song, play_pause=play_pause))
     else:
-        print(output.format(artist=artist, song=song, play_pause=play_pause).encode('UTF-8'))
+        print(output.format(artist=artist, song=song, play_pause=play_pause).encode('utf-8'))
 except Exception as e:
     if isinstance(e, dbus.exceptions.DBusException):
         print('')
     else:
         print('Spotify')
-

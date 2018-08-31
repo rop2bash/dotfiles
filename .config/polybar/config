@@ -290,7 +290,7 @@ type = custom/script
 interval = 0.5
 format-prefix = " "
 format = %{T3}<label>%{T-}
-exec = python3 ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}' -t 30
+exec = python3 ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
 format-underline = #1db954
 
 [module/temperature]
