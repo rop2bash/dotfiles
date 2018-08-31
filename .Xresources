@@ -1,5 +1,23 @@
-URxvt.scrollBar: false
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.font: xft:DejaVuSansMono:pixelsize=12
+! ******************
+! urxvt config
+! ******************
+
+! -- Perl Extensions -- !
+!URxvt.perl-ext:
+!URxvt.perl-ext-common: font-size
 URxvt.perl-ext-common: font-size
+
+! -- Fonts -- !
+URxvt*font:xft:DejaVuSansMono:pixelsize=12
+!URxvt.letterSpace: -1
+
+! -- Scrollbar -- !
+URxvt*scrollBar: false
+
+! Scrollbar style - rxvt (default), plain (most compact), next, or xterm
+!URxvt.scrollstyle: plain
+
+
+! -- KeyBindigs -- !
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard 
