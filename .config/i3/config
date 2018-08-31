@@ -228,8 +228,8 @@ bindsym XF86AudioNext 				exec $psst "dbus-send --print-reply --dest=org.mpris.M
 bindsym XF86AudioPrev 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioStop 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 
-bindsym XF86MonBrightnessUp 		exec $psst xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown 		exec $psst xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp 		exec $psst light -A 5
+bindsym XF86MonBrightnessDown 		exec $psst light -U 5
 
 ###---System Bindings---###
 bindsym $sup+Shift+l            exec $psst "i3lock -i $lockscreen"
