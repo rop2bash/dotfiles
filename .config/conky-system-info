@@ -1,20 +1,3 @@
-#=====================================================================================
-#                               aurora
-# Date    : 21/07/2017
-# Version : v2.0.1
-# Author  : Erik Dubois at http://www.erikdubois.be
-# License : Distributed under the terms of GNU GPL version 2 or later
-# Documentation English: http://erikdubois.be/linux/install-conky-theme-aurora
-# Documentation Dutch: http://erikdubois.be/linux/conky
-#======================================================================================
-
-#======================================================================================
-#
-# Source : https://plus.google.com/+RobertPartridge/ and
-# https://plus.google.com/u/0/+ThomasThompson/
-# Your work has been put to good use
-#======================================================================================
-
 ###Settings###
 background yes
 cpu_avg_samples 1
