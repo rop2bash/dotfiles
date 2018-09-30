@@ -4,7 +4,7 @@
 
 ! -- Perl Extensions -- !
 !URxvt.perl-ext:
-!URxvt.perl-ext-common: font-size
+!URxvt.perl-ext-common:
 URxvt.perl-ext-common: font-size
 
 ! -- Fonts -- !
@@ -19,5 +19,5 @@ URxvt*scrollBar: false
 
 
 ! -- KeyBindigs -- !
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard 
+!URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+!URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard 

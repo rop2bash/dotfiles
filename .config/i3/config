@@ -13,6 +13,7 @@ set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
 set $colorbg ~/.config/i3/colors/
 set $browser google-chrome
+set $touchpad "DLL07BE:01 06CB:7A13 Touchpad
 font pango:Roboto 8
 floating_modifier $alt
 
@@ -30,12 +31,16 @@ new_float       normal
 
 ###---Autostart---###
 exec_always $psst		wal -i $colorbg -n
-exec_always $psst       compton --config ~/.config/compton.conf -b
+exec $psst				compton --config ~/.config/compton.conf -b
+exec $psst				redshift
 exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
 exec $psst				spotify
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
 
+###---Touchpad config---###
+exec $psst xinput set-prop "$touchpad" "libinput Tapping Enabled" 1
+exec $psst xinput set-prop "$touchpad" "libinput Natural Scrolling Enabled" 1
 
 ###---Dropdowns--###
 set $xpos 500
