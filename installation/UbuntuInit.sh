@@ -141,9 +141,8 @@ sleep 1
 echo "#########################################################"
 echo "General software"
 echo "#########################################################"
-
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt update -y
-sudo apt upgrade -y
 
 sudo apt install -y chromium-browser
 sudo apt install -y chrome-stable
