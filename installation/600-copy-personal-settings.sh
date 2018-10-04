@@ -32,17 +32,6 @@ echo "Copy/pasting gimp scripts and themes"
 cp settings/gimp/scripts/* ~/.gimp-2.8/scripts/
 cp -r settings/gimp/themes/* ~/.gimp-2.8/themes/
 
-# wal
-sudo apt install -y imagemagick
-rm -rf /tmp/dylanaraps
-
-git clone https://github.com/dylanaraps/pywal /tmp/dylanaraps
-cd /tmp/dylanaraps
-
-pip3 install .
-
-rm -rf /tmp/dylanaraps
-
 echo "################################################################"
 echo "#########       personal settings installed     ################"
 echo "################################################################"

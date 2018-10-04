@@ -229,6 +229,17 @@ sudo apt-get install -y gnome-screenshot
 		sudo dpkg -i /tmp/playerctl
     fi
 
+# wal
+sudo apt install -y imagemagick
+rm -rf /tmp/dylanaraps
+
+git clone https://github.com/dylanaraps/pywal /tmp/dylanaraps
+cd /tmp/dylanaraps
+
+pip3 install .
+
+rm -rf /tmp/dylanaraps
+cd
 
 echo
 echo
