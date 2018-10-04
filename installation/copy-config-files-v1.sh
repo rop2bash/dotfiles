@@ -84,6 +84,7 @@ fi
 cp -rf ../.config/i3 ~/.config/
 cp -rf ../.config/polybar ~/.config/
 cp -rf ../.config/fish/ ~/.config/
+cp -rf ../.config/compton.conf ~/.config/
 cp -rf ../.Xresources ~/
 
 echo "################################################################"
