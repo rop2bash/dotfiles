@@ -13,7 +13,7 @@ set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
 set $colorbg ~/.config/i3/colors/
 set $browser google-chrome
-set $touchpad "DLL07BE:01 06CB:7A13 Touchpad
+set $touchpad DLL07BE:01 06CB:7A13 Touchpad
 font pango:Roboto 8
 floating_modifier $alt
 
@@ -224,8 +224,8 @@ bindsym $alt+Shift+Right        move right
 
 
 ###---Special Bindings---###
-bindsym XF86AudioRaiseVolume 		exec $psst "amixer -D pulse sset Master '5%+'"
-bindsym XF86AudioLowerVolume 		exec $psst "amixer -D pulse sset Master '5%-'"
+bindsym XF86AudioRaiseVolume 		exec $psst "amixer -D pulse sset Master '3%+'"
+bindsym XF86AudioLowerVolume 		exec $psst "amixer -D pulse sset Master '3%-'"
 bindsym XF86AudioMute 				exec $psst "amixer -D pulse set Master toggle"
 
 bindsym XF86AudioPlay 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
