@@ -142,14 +142,15 @@ echo "#########################################################"
 echo "General software"
 echo "#########################################################"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt update -y
 
 sudo apt install -y chromium-browser
-sudo apt install -y chrome-stable
-sudo apt install -y gimp 
-sudo apt install -y inkscape 
-sudo apt install -y meld 
-sudo apt install -y vlc 
+sudo apt install -y google-chrome-stable
+sudo apt install -y gimp
+sudo apt install -y inkscape
+sudo apt install -y meld
+sudo apt install -y vlc
 sudo apt install -y evolution
 sudo apt install -y python3-pip
 sudo apt install -y ipython
@@ -174,10 +175,6 @@ sudo apt-get install -y conky-all
 # geany
 sudo apt-get install -y geany
 
-# numerick lock on
-sudo apt-get install -y numlockx
-numlockx on
-
 # change wallpapers with feh and variety
 sudo apt-get install -y feh
 
@@ -201,7 +198,7 @@ sudo apt-get install -y lsb-release
 
 # panel icon for sound
 # sudo apt-get install -y volti
-sudo apt-get install  -y pasystray paman paprefs pavumeter pulseaudio-module-zeroconf
+sudo apt-get install  -y pasystray paprefs pavumeter pulseaudio-module-zeroconf
 
 # different terminal for nemo
 sudo apt-get install -y gnome-terminal
