@@ -5,13 +5,12 @@ echo "#########################################"
 echo "Init and add repos"
 echo "#########################################"
 
-sudo apt install -y python
-sudo apt install -y xinit
-
+sudo apt install -y software-properties-common
 sudo add-apt-repository main
 sudo add-apt-repository universe
 sudo add-apt-repository restricted
 sudo add-apt-repository multiverse
+sudo apt install -y python
 sudo apt update -y
 sudo apt upgrade -y
 
@@ -24,6 +23,7 @@ echo "#########################################"
 
 
 # script 110
+sudo apt install -y xinit
 sudo apt-get install -y autoconf
 sudo apt-get install -y automake
 sudo apt-get install -y build-essential
@@ -48,7 +48,7 @@ echo "###############################"
 # dependancy on xcb-util-xrm
 
 rm -rf /tmp/xcb-util-xrm
-git clone --recursive https://github.com/Airblader/xcb-util-xrm.git /tmp/xcb-util-xrm
+git clone --recursive http://github.com/Airblader/xcb-util-xrm.git /tmp/xcb-util-xrm
 cd /tmp/xcb-util-xrm
 git submodule update --init
 sh /tmp/xcb-util-xrm/autogen.sh --prefix=/usr
@@ -165,7 +165,7 @@ echo "#########################################################"
 sudo apt-get install -y i3status i3lock xss-lock
 sudo apt install -y lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 sudo apt install -y wicd ubuntu-drivers-common mesa-utils mesa-utils-extra compton xorg xserver-xorg nautilus
-
+sudo apt install -y snapd
 #sudo apt-get install -y i3-wm
 sudo apt-get install -y dmenu
 
