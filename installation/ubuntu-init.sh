@@ -6,10 +6,6 @@ echo "Init and add repos"
 echo "#########################################"
 
 sudo apt install -y software-properties-common
-sudo add-apt-repository main
-sudo add-apt-repository universe
-sudo add-apt-repository restricted
-sudo add-apt-repository multiverse
 sudo apt install -y python
 sudo apt update -y
 sudo apt upgrade -y
@@ -67,29 +63,7 @@ echo "Latest possible version of i3 with gaps"
 echo "##################################################"
 
 # installing i3 gap
-
-rm -rf /tmp/Airblader
-
-git clone https://github.com/Airblader/i3.git /tmp/Airblader
-cd /tmp/Airblader
-
-# compile & install
-autoreconf --force --install
-rm -rf build/
-mkdir -p build && cd build/
-
-# Disabling sanitizers is important for release versions!
-# The prefix and sysconfdir are, obviously, dependent on the distribution.
-../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-
-make && sudo make install
-
-rm -rf /tmp/Airblader
-cd
-
-echo "You installed the following version"
-echo
-echo
+sudo apt install i3
 i3 --version
 echo
 echo
