@@ -63,7 +63,7 @@ echo "Latest possible version of i3 with gaps"
 echo "##################################################"
 
 # installing i3 gap
-sudo apt install i3
+sudo apt install -y i3
 i3 --version
 echo
 echo
@@ -119,7 +119,7 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt update -y
 
-sudo apt install -y chromium-browser
+sudo apt install -y chromium
 sudo apt install -y google-chrome-stable
 sudo apt install -y gimp
 sudo apt install -y inkscape
