@@ -95,8 +95,8 @@ sudo apt install -y libcurl4-openssl-dev
 sudo apt install -y libiw-dev libnl-3-dev
 
 sudo apt install -y rxvt-unicode
-# installing polybar
 
+# installing polybar
 rm -rf /tmp/jaagr
 
 git clone --branch 3.2 --recursive https://github.com/jaagr/polybar /tmp/jaagr

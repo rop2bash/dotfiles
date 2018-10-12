@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-sudo apt install -y fonts-robot fonts-noto-cjk
+sudo apt install -y fonts-roboto fonts-noto-cjk
 
 [ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
 
