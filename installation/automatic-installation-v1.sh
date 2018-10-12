@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sh ubuntu-init.sh
+sh debian-init.sh
 
 sh install-fonts-v1.sh
 
