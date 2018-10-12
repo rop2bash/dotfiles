@@ -30,7 +30,7 @@ sudo apt-get install -y doxygen
 #script 120
 sudo apt-get install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev 
 sudo apt-get install -y libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev
-
+sudo apt install -y libinput-dev xinput
 
 echo
 echo
@@ -138,7 +138,7 @@ echo "#########################################################"
 # core applications
 sudo apt-get install -y i3status i3lock xss-lock
 sudo apt install -y lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
-sudo apt install -y wicd ubuntu-drivers-common mesa-utils mesa-utils-extra compton xorg xserver-xorg nautilus
+sudo apt install -y wicd mesa-utils mesa-utils-extra compton xorg xserver-xorg nautilus
 sudo apt install -y snapd
 #sudo apt-get install -y i3-wm
 sudo apt-get install -y dmenu
@@ -206,9 +206,9 @@ rm -rf /tmp/dylanaraps
 git clone https://github.com/dylanaraps/pywal /tmp/dylanaraps
 cd /tmp/dylanaraps
 
-pip3 install .
+sudo pip3 install .
 
-rm -rf /tmp/dylanaraps
+sudo rm -rf /tmp/dylanaraps
 cd
 
 echo

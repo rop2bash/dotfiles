@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+sudo apt install -y fonts-robot fonts-noto-cjk
+
 [ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
 
 
@@ -80,7 +82,7 @@ fi
 
 
 
-FONT="DejaVuSansMono Nerd"
+FONT="DejaVuSansMonoNerd"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
@@ -120,7 +122,7 @@ fi
 
 
 
-FONT="RobotoMono Nerd"
+FONT="RobotoMonoNerd"
 
 
 if fc-list | grep -i $FONT >/dev/null ; then
