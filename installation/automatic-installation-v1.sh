@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sh debian-init.sh
+sh fedora-init.sh
 
 sh install-fonts-v1.sh
 

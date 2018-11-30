@@ -5,8 +5,6 @@ echo "##############     Installing CTF env     #################"
 echo "###################################################"
 
 ### Virual Environmets
-sudo apt install -y python-dev python-pip libffi-dev build-essential virtualenvwrapper
-
 pip3 install setuptools
 pip install setuptools
 pip install virtualfish
@@ -61,7 +59,7 @@ cd
 sudo rm -rf /tmp/Z3Prover
 
 ### Radare2
-sudo apt install -y radare2
+sudo dnf install -y radare2
 
 ### one_gadget
 sudo gem install one_gadget
