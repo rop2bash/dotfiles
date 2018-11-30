@@ -6,7 +6,8 @@ echo "Init and add repos"
 echo "#########################################"
 
 sudo dnf install -y python
-sudo dnf install -y copr
+sudo dnf install -y copr-cli
+sudo dnf install -y gcc gcc-c++
 
 echo "#########################################"
 sleep 1
@@ -17,7 +18,6 @@ echo "#########################################"
 
 sudo dnf -y copr enable gregw/i3desktop
 sudo dnf install -y i3-gaps
-sudo dnf install -y i3lock
 
 sudo dnf install -y autoconf
 sudo dnf install -y automake
@@ -55,6 +55,7 @@ sudo dnf install -y ipython
 sudo dnf instasll -y ipython3
 sudo dnf install -y geany
 sudo dnf install -y fish
+sudo dnf install -y nano
 
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install -y vlc

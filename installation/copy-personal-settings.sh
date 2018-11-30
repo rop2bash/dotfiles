@@ -21,8 +21,6 @@ echo "Creating all folders IF they do not exist already"
 [ -d $HOME"/.gimp-2.8/themes" ] || mkdir -p $HOME"/.gimp-2.8/themes"
 
 
-echo "Change the settings later with lxappearance and qtconfig-qt4"
-
 #cp settings/.gtkrc-2.0 ~/
 #cp settings/settings.ini ~/.config/gtk-3.0/
 #cp ../.config/compton.conf ~/.config/
