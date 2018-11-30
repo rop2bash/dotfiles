@@ -1,10 +1,11 @@
 #!/bin/bash
 set -e
-mkdir ~/.fonts
 
 cp fonts/DejaVuSansMonoNerdFont.ttf ~/.fonts
 
 cp fonts/RobotoMonoNerdFont.ttf ~/.fonts
+
+fc-cache
 
 
 

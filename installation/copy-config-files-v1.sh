@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-mkdir ~/.config/i3
 mkdir ~/.config/polybar
 mkdir ~/.config/fish
 

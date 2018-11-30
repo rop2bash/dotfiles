@@ -21,6 +21,11 @@ floating_modifier $alt
 ###---Gaps---###
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
+gaps inner 10
+gaps outer 2
+smart_borders on
+
+hide_edge_borders both
 new_window      normal
 new_float       normal
 

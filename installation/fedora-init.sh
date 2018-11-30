@@ -48,11 +48,11 @@ echo "#########################################################"
 echo "General software"
 echo "#########################################################"
 sudo dnf install -y fedora-workstation-repositories
-sudo dnf config-manager -y --set-enabled google-chome
+sudo dnf config-manager -y --set-enabled google-chrome
 sudo dnf install -y google-chrome
 sudo dnf install -y gimp
 sudo dnf install -y ipython
-sudo dnf instasll -y ipython3
+sudo dnf install -y ipython3
 sudo dnf install -y geany
 sudo dnf install -y fish
 sudo dnf install -y nano
@@ -106,7 +106,9 @@ sudo dnf install -y light
 sudo dnf install -y neofetch
 
 sudo dnf config-manager -y --add-repo=http://negativo17.org/repos/fedora-spotify.repo
-sudo dnf install spotify
+sudo dnf install -y spotify
+
+sudo dnf install -y redshift
 
 sudo pip3 install pywal
 sudo pip install virtualfish
