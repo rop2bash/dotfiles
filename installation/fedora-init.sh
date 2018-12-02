@@ -66,7 +66,7 @@ sudo dnf install -y nano
 
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install -y vlc
-sudo dnf install -y python-vlc npapi-vlc
+sudo dnf install -y python-vlc
 
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 sudo dnf config-manager -y --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
