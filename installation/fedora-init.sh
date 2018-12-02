@@ -26,18 +26,25 @@ sudo dnf install -y automake
 sudo dnf install -y rxvt-unicode
 
 # installing polybar
-sudo dnf install -y cmake @development-tools cairo-devel xcb-util-devel libxcb-devel xcb-proto xcb-util-image-devel xcb-util-wm-devel
+sudo dnf install -y cmake @development-tools gcc-c++ xorg-x11-util-macros
+sudo dnf install -y cairo-devel xcb-proto xcb-util-devel xcb-util-wm-devel xcb-util-image-devel
 sudo dnf install -y xcb-util-cursor-devel alsa-lib-devel pulseaudio-libs-devel i3-ipc jsoncpp-devel libmpdclient-devel libcurl-devel wireless-tools-devel libnl3-devel
 
-rm -rf /tmp/jaagr
+rm -rf /tmp/xcb-util-xrm
+git clone --recursive http://github.com/Airblader/xcb-util-xrm.git /tmp/xcb-util-xrm
+cd /tmp/xcb-util-xrm
+git submodule update --init
+sh /tmp/xcb-util-xrm/autogen.sh --prefix=/usr
+make && sudo make install
+rm -rf /tmp/xcb-util-xrm
+cd
 
+sudo mount -o remount,size=8G,noatime /tmp
+rm -rf /tmp/jaagr
 git clone --recursive https://github.com/jaagr/polybar /tmp/jaagr
 cd /tmp/jaagr
-
-# compile & install
 mkdir -p build && cd build/
 cmake .. && sudo make install
-
 rm -rf /tmp/jaagr
 cd
 

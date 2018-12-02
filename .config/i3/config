@@ -101,21 +101,6 @@ bindsym $alt+Shift+0    move container to workspace $ws0
 assign [class="Spotify|spotify"] → $ws2
 for_window [class="Spotify"] move to workspace $ws2
 
-###---System Mode---###
-set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
-mode "$mode_system" {
-    bindsym k exec $psst ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-    bindsym l exec $psst ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-    bindsym u exec $psst ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
-    bindsym h exec $psst ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
-    bindsym r exec $psst ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
-    bindsym s exec $psst 2~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 ###---Colors---###
 set $bg     #2f343f
 set $fg     #404552
@@ -245,4 +230,4 @@ bindsym $sup+Shift+r            restart
 
 bindsym $sup+Shift+e            exit
 
-#bindsym $sup+x                  mode "$mode_system"
+#bindsym $sup+x                  
