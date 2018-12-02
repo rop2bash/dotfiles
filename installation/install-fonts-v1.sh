@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-rm -rf ~/.fonts/
-mkdir ~/.fonts/
+rm -rf ~/.fonts
+mkdir ~/.fonts
 
 cp fonts/DejaVuSansMonoNerdFont.ttf ~/.fonts
 cp fonts/RobotoMonoNerdFont.ttf ~/.fonts
