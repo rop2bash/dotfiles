@@ -83,16 +83,12 @@ sudo dnf install -y dmenu
 
 #j4-dmenu-desktop
 rm -rf /tmp/enkore
-
 git clone https://github.com/enkore/j4-dmenu-desktop /tmp/enkore
 cd /tmp/enkore
-
-# compile & install
 mkdir -p build && cd build/
 cmake ..
 make
 sudo make install
-
 rm -rf /tmp/enkore
 cd
 
