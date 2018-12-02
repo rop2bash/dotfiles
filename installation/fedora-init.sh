@@ -104,6 +104,7 @@ sudo dnf install -y compton
 # rofi
 sudo dnf install -y rofi
 
+sudo dnf install -y i3lock
 sudo dnf install -y libinput-devel
 sudo dnf install -y light
 sudo dnf install -y neofetch
