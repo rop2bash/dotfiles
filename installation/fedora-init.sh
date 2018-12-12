@@ -8,6 +8,7 @@ echo "#########################################"
 sudo dnf install -y python
 sudo dnf install -y copr-cli
 sudo dnf install -y gcc gcc-c++
+sudo dnf install -y perl-open
 
 echo "#########################################"
 sleep 1
