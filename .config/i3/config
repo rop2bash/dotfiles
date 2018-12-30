@@ -50,7 +50,7 @@ for_window [instance="quick"] floating enable sticky enable
 for_window [instance="quick"] resize set 900 400
 for_window [instance="quick"] move to position $xpos $ypos
 for_window [instance="quick"] move scratchpad
-exec_always $psst $dropterm -name "quick" -e fish
+exec $psst $dropterm -name "quick" -e fish
 
 for_window [instance="ipy"] floating enable sticky enable
 for_window [instance="ipy"] resize set 900 400
@@ -218,8 +218,8 @@ bindsym XF86AudioNext 				exec $psst "dbus-send --print-reply --dest=org.mpris.M
 bindsym XF86AudioPrev 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioStop 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 
-bindsym XF86MonBrightnessUp 		exec $psst light -A 5
-bindsym XF86MonBrightnessDown 		exec $psst light -U 5
+bindsym XF86MonBrightnessUp 		exec $psst light -A 10
+bindsym XF86MonBrightnessDown 		exec $psst light -U 10
 
 ###---System Bindings---###
 bindsym $sup+Shift+l            exec $psst "i3lock -i $lockscreen"
