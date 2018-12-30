@@ -5,7 +5,7 @@ echo "#########################################"
 echo "Init and add repos"
 echo "#########################################"
 
-sudo dnf install -y python
+sudo dnf install -y python python-devel
 sudo dnf install -y copr-cli
 sudo dnf install -y gcc gcc-c++
 sudo dnf install -y perl-open

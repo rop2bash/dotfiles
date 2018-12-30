@@ -31,17 +31,7 @@ cd
 sudo rm -rf /tmp/aquynh
 
 ### Binwalk
-rm -rf /tmp/ReFirmLabs
-
-git clone https://github.com/ReFirmLabs/binwalk /tmp/ReFirmLabs
-cd /tmp/ReFirmLabs
-
-sudo apt install -y python-lzma
-sudo python setup.py install
-
-cd
-
-sudo rm -rf /tmp/ReFirmLabs
+sudo dnf install -y binwalk
 
 ### Z3 solver
 rm -rf /tmp/Z3Prover

@@ -50,7 +50,7 @@ for_window [instance="quick"] floating enable sticky enable
 for_window [instance="quick"] resize set 900 400
 for_window [instance="quick"] move to position $xpos $ypos
 for_window [instance="quick"] move scratchpad
-exec $psst $dropterm -name "quick"
+exec $psst $dropterm -name "quick" -e fish
 
 for_window [instance="ipy"] floating enable sticky enable
 for_window [instance="ipy"] resize set 900 400
@@ -129,7 +129,7 @@ client.background       	$bg
 
 
 ###---ALT Bindings---###
-bindsym $alt+Return             exec $psst $term 
+bindsym $alt+Return             exec $psst $term -e fish
 bindsym $alt+Shift+Return       exec $psst $term -e ipython
 
 bindsym $alt+a                  focus parent
@@ -223,6 +223,10 @@ bindsym XF86MonBrightnessDown 		exec $psst light -U 5
 
 ###---System Bindings---###
 bindsym $sup+Shift+l            exec $psst "i3lock -i $lockscreen"
+
+bindsym $sup+Shift+s            exec $psst "i3lock -i $lockscreen && systemctl suspend"
+
+bindsym $sup+Shift+h            exec $psst "i3lock -i $lockscreen && systemctl hibernate"
 
 bindsym $sup+Shift+c            reload
 
