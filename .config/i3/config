@@ -32,7 +32,7 @@ new_float       normal
 ###---Autostart---###
 exec_always $psst		wal -i $colorbg -n
 exec $psst				compton --config ~/.config/compton.conf -b
-exec $psst				redshift
+exec $psst				~/.config/i3/scripts/geoloc.sh &
 exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
 exec $psst				spotify
