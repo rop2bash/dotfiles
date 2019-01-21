@@ -183,7 +183,7 @@ bindsym $alt+v                  split v
 
 bindsym $alt+w 					exec $psst $browser
 
-#bindsym $alt+x
+bindsym $alt+x 					exec $psst $term -e ranger
 
 #bindsym $alt+y
 
