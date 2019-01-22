@@ -61,7 +61,7 @@ font-1 = RobotoMono Nerd Font:size=10:weight=bold;0
 font-2 = NotoSansMono CJK JP:size=10;0
 
 modules-left = i3 xwindow
-modules-center = spotify 
+modules-center = clementine
 modules-right = volume memory cpu wlan eth battery date time powermenu
 
 tray-position = right
@@ -291,6 +291,15 @@ interval = 0.5
 format-prefix = " "
 format = %{T3}<label>%{T-}
 exec = python3 ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
+
+[module/clementine]
+type = custom/script
+interval = 0.5
+format-prefix = " "
+label = %output%
+format = %{T3}<label>%{T-}
+exec = ~/.config/polybar/scripts/clementine_status.sh
 format-underline = #1db954
 
 [module/temperature]
