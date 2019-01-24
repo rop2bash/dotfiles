@@ -11,7 +11,7 @@ set $term urxvt
 set $dropterm urxvt
 set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
-set $colorbg ~/.config/i3/colors/
+set $colorbg ~/.config/i3/colors/color2.jpg
 set $browser google-chrome
 set $touchpad DLL07BE:01 06CB:7A13 Touchpad
 font pango:Roboto 8
@@ -30,10 +30,10 @@ new_window      normal
 new_float       normal
 
 ###---Autostart---###
-exec_always $psst		wal -i $colorbg -n
+exec_always $psst		wal -i $colorbg
 exec $psst				compton --config ~/.config/compton.conf -b
 exec $psst				~/.config/i3/scripts/geoloc.sh &
-exec $psst              feh --bg-scale $wallpaper
+#exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
 exec $psst				clementine
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
@@ -136,7 +136,7 @@ bindsym $alt+a                  focus parent
 
 bindsym $alt+b                  border toggle
 
-#bindsym $alt+c
+bindsym $alt+c 					split h
 
 bindsym $alt+d                  exec $psst j4-dmenu-desktop
 #bindsym $alt+d                  exec $psst i3-dmenu-desktop --dmenu='dmenu_run -i -nf "$WHITE" -nb "$BLACK"'
@@ -148,18 +148,19 @@ bindsym $alt+f                  fullscreen toggle
 
 #bindsym $alt+g
 
-bindsym $alt+h                  split h
+bindsym $alt+h                  focus left
+bindsym $alt+Shift+h            move left
 
 bindsym $alt+i                  resize grow height 10 px or 10 ppt
 
-bindsym $alt+j                  focus left
-bindsym $alt+Shift+j            move left
+bindsym $alt+j                  focus down
+bindsym $alt+Shift+j            move down
 
-bindsym $alt+k                  focus down
-bindsym $alt+Shift+k            move down
+bindsym $alt+k                  focus up
+bindsym $alt+Shift+k            move up
 
-bindsym $alt+l                  focus up
-bindsym $alt+Shift+l            move up
+bindsym $alt+l                  focus right
+bindsym $alt+Shift+l            move right
 
 bindsym $alt+m                  [instance="ipy"] scratchpad show; move to position $xpos $ypos
 
@@ -189,8 +190,8 @@ bindsym $alt+x 					exec $psst $term -e ranger
 
 #bindsym $alt+z
 
-bindsym $alt+semicolon          focus right
-bindsym $alt+Shift+semicolon    move right
+#bindsym $alt+semicolon          
+#bindsym $alt+Shift+semicolon    
 
 bindsym $alt+space              focus mode_toggle
 bindsym $alt+Shift+space        floating toggle

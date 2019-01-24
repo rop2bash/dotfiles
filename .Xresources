@@ -8,7 +8,7 @@
 URxvt.perl-ext-common: font-size
 
 ! -- Fonts -- !
-URxvt*font:xft:DejaVuSansMono:pixelsize=12
+URxvt*font:xft:DejaVuSansMono Nerd Font:pixelsize=12
 !URxvt.letterSpace: -1
 
 ! -- Scrollbar -- !

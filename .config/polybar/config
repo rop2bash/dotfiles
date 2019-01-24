@@ -50,22 +50,26 @@ line-color = #f00
 border-size = 1
 border-color = #00000000
 
-padding-left = 0
-padding-right = 0
+padding = 0
 
 module-margin-left = 1
-module-margin-right = 1
+module-margin-right = 0
 
-font-0 = DejaVuSansMono Nerd Font:size=10:weight=bold;0
-font-1 = RobotoMono Nerd Font:size=10:weight=bold;0
-font-2 = NotoSansMono CJK JP:size=10;0
+font-0 = DejaVuSansMono Nerd Font:size=10:weight=bold;3
+font-1 = RobotoMono Nerd Font:size=10:weight=bold;3
+font-2 = NotoSansMono CJK JP:size=10;3
 
 modules-left = i3 xwindow
 modules-center = clementine
 modules-right = volume memory cpu wlan eth battery date time powermenu
 
-tray-position = right
-tray-padding = 2
+tray-position = center
+tray-background = ${colors.background}
+;tray-padding = 2
+wm-restack = i3
+tray-offset-y = -50
+tray-offset-x = 200
+
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -86,26 +90,26 @@ index-sort = true
 enable-scroll = false
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;10
 ws-icon-default = 
 
-format = <label-state> <label-mode>
-format-padding-right = 0
-
-label-mode = test
-
-label-unfocused = %index% %icon%
+label-unfocused = %icon%
 label-unfocused-foreground = #b1beed
 label-unfocused-padding = 1
 
-label-focused = %index% %icon%
+label-focused = %icon%
 label-focused-foreground = #79e083
 label-focused-padding = 1
 
-label-urgent = %index% %icon%
+label-urgent = %icon%
 label-urgent-foreground = #e4b226
 label-urgent-padding = 1
 
@@ -113,13 +117,13 @@ label-urgent-padding = 1
 type = custom/menu
 
 label-open = ""
-label-close = "cancel   "
+label-close = "cancel"
 
 label-close-background = #312842
 label-close-foreground = #ffeefc
 label-open-padding-left = 0
-label-open-padding-right = 3
-label-close-padding = 0
+label-open-padding-right = 1
+label-close-padding = 2
 
 menu-0-0 = lock
 menu-0-0-exec = "i3lock -i ~/.config/i3/walls/lock.png"
@@ -206,7 +210,7 @@ date-alt = "%Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M
 
-format-prefix = ""
+format-prefix = ""
 format-prefix-foreground = #e5c078
 ;format-underline = #0a6cf5
 
@@ -226,7 +230,7 @@ label-padding = 1
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <ramp-volume>
+format-volume = <ramp-volume> <label-volume>
 label-volume-foreground = ${root.foreground}
 format-volume-padding = 1
 
@@ -296,11 +300,12 @@ format-underline = #1db954
 [module/clementine]
 type = custom/script
 interval = 0.5
-format-prefix = " "
+format-prefix = 
 label = %output%
 format = %{T3}<label>%{T-}
 exec = ~/.config/polybar/scripts/clementine_status.sh
 format-underline = #1db954
+click-left = clementine --play-pause
 
 [module/temperature]
 type = internal/temperature
