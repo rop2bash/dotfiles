@@ -36,6 +36,7 @@ exec $psst				~/.config/i3/scripts/geoloc.sh &
 #exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
 exec $psst				clementine
+exec $psst				slack
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
 
 ###---Touchpad config---###
@@ -100,6 +101,10 @@ bindsym $alt+Shift+0    move container to workspace $ws0
 # clementine
 assign [class="Clementine|clementine"] → $ws2
 for_window [class="Clementine"] move to workspace $ws2
+
+# slack
+assign [class="Slack|slack"] → $ws3
+for_window [class="Slack"] move to workspace $ws3
 
 ###---Colors---###
 set $bg     #2f343f
@@ -213,6 +218,8 @@ bindsym $alt+Shift+Right        move right
 bindsym XF86AudioRaiseVolume 		exec $psst "amixer -D pulse sset Master '3%+'"
 bindsym XF86AudioLowerVolume 		exec $psst "amixer -D pulse sset Master '3%-'"
 bindsym XF86AudioMute 				exec $psst "amixer -D pulse set Master toggle"
+bindsym XF86MonBrightnessUp 		exec $psst light -A 10
+bindsym XF86MonBrightnessDown 		exec $psst light -U 10
 
 ###Spotify
 #bindsym XF86AudioPlay 				exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
@@ -225,9 +232,6 @@ bindsym XF86AudioPlay 				exec $psst "clementine --play-pause"
 bindsym XF86AudioStop 				exec $psst "clementine --stop"
 bindsym XF86AudioPrev 				exec $psst "clementine --previous"
 bindsym XF86AudioNext 				exec $psst "clementine --next"
-
-bindsym XF86MonBrightnessUp 		exec $psst light -A 10
-bindsym XF86MonBrightnessDown 		exec $psst light -U 10
 
 ###---System Bindings---###
 bindsym $sup+Shift+l            exec $psst "i3lock -i $lockscreen"
