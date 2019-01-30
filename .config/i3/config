@@ -12,7 +12,7 @@ set $dropterm urxvt
 set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
 set $colorbg ~/.config/i3/colors/color2.jpg
-set $browser google-chrome
+set $browser firefox
 set $touchpad DLL07BE:01 06CB:7A13 Touchpad
 font pango:Roboto 8
 floating_modifier $alt

@@ -17,315 +17,309 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color0:#222}
-;background = #222
-background-alt = #444
-;foreground = #dfdfdf
-foreground = #c4b7c5
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+    background = ${xrdb:color0:#222}
+    ;background = #222
+    background-alt = #444
+    ;foreground = #dfdfdf
+    foreground = #c4b7c5
+    foreground-alt = #555
+    primary = #ffb52a
+    secondary = #e60053
+    alert = #bd2c40
 
 [global/wm]
-margin-top = 0
-margin-bottom = 0
-margin-left = 0
+    margin-top = 0
+    margin-bottom = 0
+    margin-left = 0
 
 [bar/top]
-monitor = ${env:MONITOR:}
-width = 100%
-height = 30
-offset-x = 0
-offset-y = 0
-radius = 6.0
-fixed-center = true
+    monitor = ${env:MONITOR:}
+    width = 100%
+    height = 30
+    offset-x = 0
+    offset-y = 0
+    radius = 6.0
+    fixed-center = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+    background = ${colors.background}
+    foreground = ${colors.foreground}
 
-line-size = 2
-line-color = #f00
+    line-size = 2
+    line-color = #f00
 
-border-size = 1
-border-color = #00000000
+    border-size = 1
+    border-color = #00000000
 
-padding = 0
+    padding = 0
 
-module-margin-left = 1
-module-margin-right = 0
+    module-margin-left = 1
+    module-margin-right = 0
 
-font-0 = DejaVuSansMono Nerd Font:size=10:weight=bold;3
-font-1 = RobotoMono Nerd Font:size=10:weight=bold;3
-font-2 = NotoSansMono CJK JP:size=10;3
+    font-0 = DejaVuSansMono Nerd Font:size=10:weight=bold;3
+    font-1 = RobotoMono Nerd Font:size=10:weight=bold;3
+    font-2 = NotoSansMono CJK JP:size=10;3
 
-modules-left = i3 xwindow
-modules-center = clementine
-modules-right = volume memory cpu wlan eth battery date time powermenu
+    modules-left = i3 xwindow
+    modules-center = music
+    modules-right = volume memory cpu wlan eth battery date time powermenu
 
-tray-position = center
-tray-background = ${colors.background}
-;tray-padding = 2
-;wm-restack = i3
-override-redirect = true
-tray-offset-y = 0
-tray-offset-x = 250
+    tray-position = center
+    tray-background = ${colors.background}
+    override-redirect = true
+    tray-offset-x = -325
 
 
-cursor-click = pointer
-cursor-scroll = ns-resize
+    cursor-click = pointer
+    cursor-scroll = ns-resize
 
 [module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-format = <label>
-format-underline = #f17f14
-label-font = 3
+    type = internal/xwindow
+    label = %title:0:30:...%
+    format = <label>
+    format-underline = #f17f14
+    label-font = 3
 
 [module/i3]
-type = internal/i3
+    type = internal/i3
 
-pin-workspaces = true
-strip-wsnumbers = true
-index-sort = true
-enable-scroll = false
+    pin-workspaces = true
+    strip-wsnumbers = true
+    index-sort = true
+    enable-scroll = false
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;5
-ws-icon-5 = 6;6
-ws-icon-6 = 7;7
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
-ws-icon-9 = 10;10
-ws-icon-default = 
+    ws-icon-0 = 1;
+    ws-icon-1 = 2;
+    ws-icon-2 = 3;
+    ws-icon-3 = 4;
+    ws-icon-4 = 5;5
+    ws-icon-5 = 6;6
+    ws-icon-6 = 7;7
+    ws-icon-7 = 8;8
+    ws-icon-8 = 9;9
+    ws-icon-9 = 10;10
+    ws-icon-default = 
 
-label-unfocused = %icon%
-label-unfocused-foreground = #b1beed
-label-unfocused-padding = 1
+    label-unfocused = %icon%
+    label-unfocused-foreground = #b1beed
+    label-unfocused-padding = 1
 
-label-focused = %icon%
-label-focused-foreground = #79e083
-label-focused-padding = 1
+    label-focused = %icon%
+    label-focused-foreground = #79e083
+    label-focused-padding = 1
 
-label-urgent = %icon%
-label-urgent-foreground = #e4b226
-label-urgent-padding = 1
+    label-urgent = %icon%
+    label-urgent-foreground = #e4b226
+    label-urgent-padding = 1
 
 [module/powermenu]
-type = custom/menu
+    type = custom/menu
 
-label-open = ""
-label-close = "cancel"
+    label-open = ""
+    label-close = "cancel"
 
-label-close-background = #312842
-label-close-foreground = #ffeefc
-label-open-padding-left = 0
-label-open-padding-right = 1
-label-close-padding = 2
+    label-close-background = #312842
+    label-close-foreground = #ffeefc
+    label-open-padding-left = 0
+    label-open-padding-right = 1
+    label-close-padding = 2
 
-menu-0-0 = lock
-menu-0-0-exec = "i3lock -i ~/.config/i3/walls/lock.png"
-menu-0-0-background = #312842
-menu-0-0-foreground = #c05c47
-menu-0-0-padding-right = 2
+    menu-0-0 = lock
+    menu-0-0-exec = "i3lock -i ~/.config/i3/walls/lock.png"
+    menu-0-0-background = #312842
+    menu-0-0-foreground = #c05c47
+    menu-0-0-padding-right = 2
 
-menu-0-1 = hibernate
-menu-0-1-exec = menu-open-1
-menu-0-1-background = #312842
-menu-0-1-foreground = #c05c47
-menu-0-1-padding-right = 2
+    menu-0-1 = hibernate
+    menu-0-1-exec = menu-open-1
+    menu-0-1-background = #312842
+    menu-0-1-foreground = #c05c47
+    menu-0-1-padding-right = 2
 
-menu-0-2 = power off
-menu-0-2-exec = menu-open-2
-menu-0-2-background = #312842
-menu-0-2-foreground = #c05c47
-menu-0-2-padding-right = 2
+    menu-0-2 = power off
+    menu-0-2-exec = menu-open-2
+    menu-0-2-background = #312842
+    menu-0-2-foreground = #c05c47
+    menu-0-2-padding-right = 2
 
-menu-1-0 = hibernate?  
-menu-1-0-exec = "i3lock -i ~/.config/i3/walls/lock.png && systemctl hibernate"
-menu-1-0-background = #312842
-menu-1-0-foreground = #e4b226
-menu-1-0-padding-right = 2
+    menu-1-0 = hibernate?  
+    menu-1-0-exec = "i3lock -i ~/.config/i3/walls/lock.png && systemctl hibernate"
+    menu-1-0-background = #312842
+    menu-1-0-foreground = #e4b226
+    menu-1-0-padding-right = 2
 
-menu-2-0 = power off?  
-menu-2-0-exec = poweroff
-menu-2-0-background = #312842
-menu-2-0-foreground = #e4b226
-menu-2-0-padding-right = 1
+    menu-2-0 = power off?  
+    menu-2-0-exec = poweroff
+    menu-2-0-background = #312842
+    menu-2-0-foreground = #e4b226
+    menu-2-0-padding-right = 1
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
 
+; vim:ft=dosini
 [module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = ""
-format-prefix-foreground = #95B47B
-;format-underline = #f90000
-label = %percentage%%
-label-padding = 1
+    type = internal/cpu
+    interval = 2
+    format-prefix = ""
+    format-prefix-foreground = #95B47B
+    ;format-underline = #f90000
+    label = %percentage%%
+    label-padding = 1
 
 [module/memory]
-type = internal/memory
-interval = 1
-format-prefix = ""
-format-prefix-foreground = #B06A58
-;format-underline = #4bffdc
-label = %percentage_used%%
-label-padding = 1
+    type = internal/memory
+    interval = 1
+    format-prefix = ""
+    format-prefix-foreground = #B06A58
+    ;format-underline = #4bffdc
+    label = %percentage_used%%
+    label-padding = 1
 
 [module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
+    type = internal/network
+    interface = wlp2s0
+    interval = 3.0
 
-format-connected = " <label-connected>"
-label-connected = %essid:0:8:...%
-format-connected-foreground = #566CA9
-format-disconnected = 
-format-disconnected-foreground = #C13416
+    format-connected = " <label-connected>"
+    label-connected = %essid:0:8:...%
+    format-connected-foreground = #566CA9
+    format-disconnected = 
+    format-disconnected-foreground = #C13416
 
 [module/eth]
-type = internal/network
-interface = net0
-interval = 3.0
+    type = internal/network
+    interface = net0
+    interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+    format-connected-underline = #55aa55
+    format-connected-prefix = " "
+    format-connected-prefix-foreground = ${colors.foreground-alt}
+    label-connected = %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+    format-disconnected =
+    ;format-disconnected = <label-disconnected>
+    ;format-disconnected-underline = ${self.format-connected-underline}
+    ;label-disconnected = %ifname% disconnected
+    ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
-type = internal/date
-interval = 5
+    type = internal/date
+    interval = 5
 
-date = "%d/%m-%Y"
-date-alt = "%Y-%m-%d"
+    date = "%d/%m-%Y"
+    date-alt = "%Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M
+    time = %H:%M
+    time-alt = %H:%M
 
-format-prefix = ""
-format-prefix-foreground = #e5c078
-;format-underline = #0a6cf5
+    format-prefix = ""
+    format-prefix-foreground = #e5c078
+    ;format-underline = #0a6cf5
 
-label = %date%
-label-padding = 1
+    label = %date%
+    label-padding = 1
 
 [module/time]
-type = internal/date
-interval = 5
+    type = internal/date
+    interval = 5
 
-time = %H:%M
-format-prefix = ""
-format-prefix-foreground = #7B5E8D
-label = %time%
-label-padding = 1
+    time = %H:%M
+    format-prefix = ""
+    format-prefix-foreground = #7B5E8D
+    label = %time%
+    label-padding = 1
 
 [module/volume]
-type = internal/volume
+    type = internal/volume
 
-format-volume = <ramp-volume> <label-volume>
-label-volume-foreground = ${root.foreground}
-format-volume-padding = 1
+    format-volume = <ramp-volume> <label-volume>
+    label-volume-foreground = ${root.foreground}
+    format-volume-padding = 1
 
-format-muted-prefix = 
-format-muted-foreground = #C13416
-label-muted="   "
-ramp-volume-0=
-ramp-volume-1=
-ramp-volume-2=
+    format-muted-prefix = 
+    format-muted-foreground = #C13416
+    label-muted="   "
+    ramp-volume-0=
+    ramp-volume-1=
+    ramp-volume-2=
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = │
-bar-volume-indicator-font = 5
-bar-volume-indicator-foreground = #ff
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+    bar-volume-width = 10
+    bar-volume-foreground-0 = #55aa55
+    bar-volume-foreground-1 = #55aa55
+    bar-volume-foreground-2 = #55aa55
+    bar-volume-foreground-3 = #55aa55
+    bar-volume-foreground-4 = #55aa55
+    bar-volume-foreground-5 = #f5a70a
+    bar-volume-foreground-6 = #ff5555
+    bar-volume-gradient = false
+    bar-volume-indicator = │
+    bar-volume-indicator-font = 5
+    bar-volume-indicator-foreground = #ff
+    bar-volume-fill = ─
+    bar-volume-fill-font = 2
+    bar-volume-empty = ─
+    bar-volume-empty-font = 2
+    bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
+    type = internal/battery
+    battery = BAT0
+    adapter = ADP1
+    full-at = 98
 
-format-charging = <label-charging> <ramp-capacity>
-format-charging-padding = 2
-format-charging-foreground = #0a6cf5
+    format-charging = <label-charging> <ramp-capacity>
+    format-charging-padding = 2
+    format-charging-foreground = #0a6cf5
 
-format-discharging = <label-discharging> <ramp-capacity>
-format-discharging-padding = 2
-format-discharging-foreground = #ffb52a
+    format-discharging = <label-discharging> <ramp-capacity>
+    format-discharging-padding = 2
+    format-discharging-foreground = #ffb52a
 
-format-full = <label-full> <ramp-capacity>
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-padding = 2
-format-full-foreground = #55aa55
+    format-full = <label-full> <ramp-capacity>
+    format-full-prefix-foreground = ${colors.foreground-alt}
+    format-full-padding = 2
+    format-full-foreground = #55aa55
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 =  
-ramp-capacity-3 = 
+    ramp-capacity-0 = 
+    ramp-capacity-1 = 
+    ramp-capacity-2 =  
+    ramp-capacity-3 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+    animation-charging-0 = 
+    animation-charging-1 = 
+    animation-charging-2 = 
+    animation-charging-foreground = ${colors.foreground-alt}
+    animation-charging-framerate = 750
 
-[module/spotify]
-type = custom/script
-interval = 0.5
-format-prefix = " "
-format = %{T3}<label>%{T-}
-exec = python3 ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
-format-underline = #1db954
-
-[module/clementine]
-type = custom/script
-interval = 0.5
-format-prefix = 
-label = %output%
-format = %{T3}<label>%{T-}
-exec = ~/.config/polybar/scripts/clementine_status.sh
-format-underline = #1db954
-click-left = clementine --play-pause
+[module/music]
+    type = custom/script
+    interval = 0.5
+    label = %output%
+    format = %{T3}<label>%{T-}
+    exec = ~/.config/polybar/scripts/clementine_status.sh
+    format-underline = #1db954
+    click-left = clementine --play-pause
 
 [module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+    type = internal/temperature
+    thermal-zone = 0
+    warn-temperature = 60
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+    format = <ramp> <label>
+    format-underline = #f50a4d
+    format-warn = <ramp> <label-warn>
+    format-warn-underline = ${self.format-underline}
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+    label = %temperature-c%
+    label-warn = %temperature-c%
+    label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+    ramp-0 = 
+    ramp-1 = 
+    ramp-2 = 
+    ramp-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
