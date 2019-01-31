@@ -158,9 +158,8 @@ bindsym $alt+b                  border toggle
 
 bindsym $alt+c 					split h
 
-bindsym $alt+d                  exec $psst j4-dmenu-desktop
-#bindsym $alt+d                  exec $psst i3-dmenu-desktop --dmenu='dmenu_run -i -nf "$WHITE" -nb "$BLACK"'
-bindsym $alt+Shift+d            exec $psst dmenu_run -b -nf "$WHITE" -nb "$BLACK"
+bindsym $alt+d                  exec $psst rofi -show drun
+bindsym $alt+Shift+d            exec $psst rofi -show run
 
 bindsym $alt+e                  layout toggle split
 
@@ -211,7 +210,10 @@ bindsym $alt+x 					exec $psst $term -e ranger
 #bindsym $alt+z
 
 #bindsym $alt+semicolon          
-#bindsym $alt+Shift+semicolon    
+#bindsym $alt+Shift+semicolon   
+
+bindsym $alt+Tab 				exec $psst rofi -show window 
+#bindsym $alt+Shift+Tab 		
 
 bindsym $alt+space              focus mode_toggle
 bindsym $alt+Shift+space        floating toggle
