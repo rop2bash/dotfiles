@@ -60,12 +60,13 @@
     font-2 = NotoSansMono CJK JP:size=10;3
 
     modules-left = i3 xwindow
-    modules-center = music
+    modules-center = spotify
     modules-right = volume memory cpu wlan eth battery date time powermenu
 
     tray-position = center
     tray-background = ${colors.background}
     override-redirect = true
+    wm-restack = i3
     tray-offset-x = -325
 
 
@@ -97,6 +98,16 @@
     ws-icon-7 = 8;8
     ws-icon-8 = 9;9
     ws-icon-9 = 10;10
+    ws-icon-10 = 11;11
+    ws-icon-11 = 12;12
+    ws-icon-12 = 13;13
+    ws-icon-13 = 14;14
+    ws-icon-14 = 15;15
+    ws-icon-15 = 16;16
+    ws-icon-16 = 17;17
+    ws-icon-17 = 18;18
+    ws-icon-18 = 19;19
+    ws-icon-19 = 20;20
     ws-icon-default = 
 
     label-unfocused = %icon%
@@ -110,6 +121,10 @@
     label-urgent = %icon%
     label-urgent-foreground = #e4b226
     label-urgent-padding = 1
+
+    label-visible = %icon%
+    label-visible-foreground = #79e083
+    label-visible-padding = 1
 
 [module/powermenu]
     type = custom/menu
@@ -287,7 +302,7 @@
     animation-charging-foreground = ${colors.foreground-alt}
     animation-charging-framerate = 750
 
-[module/music]
+[module/clementine]
     type = custom/script
     interval = 0.5
     label = %output%
@@ -295,6 +310,15 @@
     exec = ~/.config/polybar/scripts/clementine_status.sh
     format-underline = #1db954
     click-left = clementine --play-pause
+
+[module/spotify]
+    type = custom/script
+    interval = 0.5
+    label = %output%
+    format = %{T3}<label>%{T-}
+    exec = python3 ~/.config/polybar/scripts/spotify_status.py
+    format-underline = #1db954
+    click-left = spotify --play-pause
 
 [module/temperature]
     type = internal/temperature
