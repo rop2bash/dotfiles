@@ -11,10 +11,9 @@ set $term urxvt
 set $dropterm urxvt
 set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
-set $colorbg ~/.config/i3/colors/color2.jpg
+set $colorbg ~/.config/i3/colors/color3.jpg
 set $browser firefox
-set $touchpad DLL07BE:01 06CB:7A13 Touchpad
-set $monitor1 eDP-1
+set $monitor1 DP-1
 set $monitor2 HDMI-1
 font pango:Roboto 8
 floating_modifier $alt
@@ -25,7 +24,7 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 2
-#gaps top 3
+gaps top 30
 smart_borders on
 
 hide_edge_borders both
@@ -36,29 +35,12 @@ new_float       normal
 exec_always $psst   wal -i $colorbg
 exec $psst        compton --config ~/.config/compton.conf &
 exec $psst        ~/.config/i3/scripts/redshift.sh &
+exec_always $psst       ~/.config/i3/scripts/bar.sh &
 #exec $psst              feh --bg-scale $wallpaper
 exec $psst              xss-lock -- i3lock -n -i $lockscreen
 exec $psst        spotify
 exec $psst        slack
-exec_always $psst       ~/.config/i3/scripts/bar.sh &
-
-# dummy bar to not stack windows and polybar
-bar {
-    height 30
-    mode dock
-    position top
-    i3bar_command i3bar -t
-    tray_output         none  # do not show tray output
-    workspace_buttons   no    # do not show workspace buttons
-    colors {
-      # set bar background to transparent
-      background #00000000
-    }
-}
-
-###---Touchpad config---###
-exec $psst xinput set-prop "$touchpad" "libinput Tapping Enabled" 1
-exec $psst xinput set-prop "$touchpad" "libinput Natural Scrolling Enabled" 1
+exec $psst        fcitx -d
 
 ###---Dropdowns--###
 set $xpos 500
@@ -249,7 +231,7 @@ bindsym $alt+p                  resize grow width 10 px or 10 ppt
 
 bindsym $alt+q                  kill
 
-bindsym $alt+r                  exec $psst subl
+bindsym $alt+r                  exec $psst subl3
 
 bindsym $alt+s                  layout stacking
 
@@ -290,9 +272,9 @@ bindsym $alt+Shift+Right        move right
 
 
 ###---Special Bindings---###
-bindsym XF86AudioRaiseVolume    exec $psst "amixer -D pulse sset Master '3%+'"
-bindsym XF86AudioLowerVolume    exec $psst "amixer -D pulse sset Master '3%-'"
-bindsym XF86AudioMute         exec $psst "amixer -D pulse set Master toggle"
+bindsym XF86AudioRaiseVolume    exec $psst "pamixer -i 3"
+bindsym XF86AudioLowerVolume    exec $psst "pamixer -d 3"
+bindsym XF86AudioMute         exec $psst "pamixer -t"
 bindsym XF86MonBrightnessUp     exec $psst light -A 10
 bindsym XF86MonBrightnessDown     exec $psst light -U 10
 
