@@ -57,11 +57,11 @@
 
     font-0 = DejaVuSansMono Nerd Font:size=10:weight=bold;3
     font-1 = RobotoMono Nerd Font:size=10:weight=bold;3
-    font-2 = NotoSansMono CJK JP:size=10;3
+    font-2 = Koruri,Koruri Light:size=10;3
 
     modules-left = i3 xwindow
     modules-center = spotify
-    modules-right = volume memory cpu wlan eth battery date time powermenu
+    modules-right = volume memory cpu wlan battery date time powermenu
 
     tray-position = center
     tray-background = ${colors.background}
@@ -199,13 +199,13 @@
 
 [module/eth]
     type = internal/network
-    interface = net0
+    interface = enp62s0u1u2
     interval = 3.0
-
-    format-connected-underline = #55aa55
-    format-connected-prefix = " "
-    format-connected-prefix-foreground = ${colors.foreground-alt}
-    label-connected = %local_ip%
+    
+    format-connected = <label-connected>
+    format-connected-prefix = 
+    format-connected-prefix-foreground = #566CA9
+    label-connected = Ethernet
 
     format-disconnected =
     ;format-disconnected = <label-disconnected>
@@ -241,7 +241,7 @@
     label-padding = 1
 
 [module/volume]
-    type = internal/volume
+    type = internal/pulseaudio
 
     format-volume = <ramp-volume> <label-volume>
     label-volume-foreground = ${root.foreground}

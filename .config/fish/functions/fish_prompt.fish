@@ -34,5 +34,5 @@ function fish_prompt
     echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
   end
 
-  echo -n -s $normal '[' $white (whoami) $normal '@' $red (hostname -s) $normal ' ' $cwd ' '  $git_info $normal ']$ '
+  echo -n -s $normal '[' $white (whoami) $normal '@' $red (hostname) $normal ' ' $cwd ' '  $git_info $normal ']$ '
 end

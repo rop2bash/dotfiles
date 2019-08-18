@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/python
 
 import sys
 import dbus
@@ -30,7 +30,6 @@ parser.add_argument(
 args = parser.parse_args()
 
 # Default parameters
-output = '{play_pause} {artist}: {song}'
 trunclen = 25
 play_pause = u'\u25B6,\uF04C' # first character is play, second is paused
 
@@ -76,7 +75,8 @@ try:
     
     # Python3 uses UTF-8 by default. 
     if sys.version_info.major == 3:
-        print(output.format(artist=artist, song=song, play_pause=play_pause))
+        #print(output.format(artist=artist, song=song, play_pause=play_pause))
+        print(f'{play_pause} {artist}: {song}')
     else:
         print(output.format(artist=artist, song=song, play_pause=play_pause).encode('utf-8'))
 except Exception as e:
