@@ -1,0 +1,324 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+###---Basic Definitions---###
+# Mod1 = Alt, Mod4 = Win key
+set $alt Mod1
+set $sup Mod4
+set $psst --no-startup-id
+set $term urxvt
+set $dropterm urxvt
+set $wallpaper ~/.config/i3/walls/wall.png
+set $lockscreen ~/.config/i3/walls/lock.png
+set $colorbg ~/.config/i3/colors/color2.jpg
+set $browser firefox
+set $touchpad DLL07BE:01 06CB:7A13 Touchpad
+set $monitor1 eDP-1
+set $monitor2 HDMI-1
+font pango:Roboto 8
+floating_modifier $alt
+
+
+###---Gaps---###
+hide_edge_borders both
+for_window [class="^.*"] border pixel 0
+gaps inner 10
+gaps outer 2
+gaps top 3
+smart_borders on
+
+hide_edge_borders both
+new_window      normal
+new_float       normal
+
+###---Autostart---###
+exec_always $psst   wal -i $colorbg
+exec $psst        compton --config ~/.config/compton.conf &
+exec $psst        ~/.config/i3/scripts/redshift.sh &
+#exec $psst              feh --bg-scale $wallpaper
+exec $psst              xss-lock -- i3lock -n -i $lockscreen
+exec $psst        spotify
+exec $psst        slack
+exec_always $psst       ~/.config/i3/scripts/bar.sh &
+
+# dummy bar to not stack windows and polybar
+bar {
+    height 30
+    mode dock
+    position top
+    i3bar_command i3bar -t
+    tray_output         none  # do not show tray output
+    workspace_buttons   no    # do not show workspace buttons
+    colors {
+      # set bar background to transparent
+      background #00000000
+    }
+}
+
+###---Touchpad config---###
+exec $psst xinput set-prop "$touchpad" "libinput Tapping Enabled" 1
+exec $psst xinput set-prop "$touchpad" "libinput Natural Scrolling Enabled" 1
+
+###---Dropdowns--###
+set $xpos 500
+set $ypos 32
+
+for_window [instance="quick"] floating enable sticky enable
+for_window [instance="quick"] resize set 900 400
+for_window [instance="quick"] move to position $xpos $ypos
+for_window [instance="quick"] move scratchpad
+exec $psst $dropterm -name "quick" -e fish
+
+for_window [instance="ipy"] floating enable sticky enable
+for_window [instance="ipy"] resize set 900 400
+for_window [instance="ipy"] move to position $xpos $ypos
+for_window [instance="ipy"] move scratchpad
+exec $psst $dropterm -name "ipy" -e ipython
+
+
+###---Workspace Bindings---###
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+
+# switch to workspace
+bindsym $alt+1          workspace $ws1
+bindsym $alt+2          workspace $ws2; focus
+bindsym $alt+3          workspace $ws3
+bindsym $alt+4          workspace $ws4
+bindsym $alt+5          workspace $ws5
+bindsym $alt+6          workspace $ws6
+bindsym $alt+7          workspace $ws7
+bindsym $alt+8          workspace $ws8
+bindsym $alt+9          workspace $ws9
+bindsym $alt+0          workspace $ws10
+
+bindsym $sup+1          workspace $ws11
+bindsym $sup+2          workspace $ws12
+bindsym $sup+3          workspace $ws13
+bindsym $sup+4          workspace $ws14
+bindsym $sup+5          workspace $ws15
+bindsym $sup+6          workspace $ws16
+bindsym $sup+7          workspace $ws17
+bindsym $sup+8          workspace $ws18
+bindsym $sup+9          workspace $ws19
+bindsym $sup+0          workspace $ws20
+
+# move focused container to workspace
+bindsym $alt+Shift+1    move container to workspace $ws1
+bindsym $alt+Shift+2    move container to workspace $ws2
+bindsym $alt+Shift+3    move container to workspace $ws3
+bindsym $alt+Shift+4    move container to workspace $ws4
+bindsym $alt+Shift+5    move container to workspace $ws5
+bindsym $alt+Shift+6    move container to workspace $ws6
+bindsym $alt+Shift+7    move container to workspace $ws7
+bindsym $alt+Shift+8    move container to workspace $ws8
+bindsym $alt+Shift+9    move container to workspace $ws9
+bindsym $alt+Shift+0    move container to workspace $ws10
+
+bindsym $sup+Shift+1    move container to workspace $ws11
+bindsym $sup+Shift+2    move container to workspace $ws12
+bindsym $sup+Shift+3    move container to workspace $ws13
+bindsym $sup+Shift+4    move container to workspace $ws14
+bindsym $sup+Shift+5    move container to workspace $ws15
+bindsym $sup+Shift+6    move container to workspace $ws16
+bindsym $sup+Shift+7    move container to workspace $ws17
+bindsym $sup+Shift+8    move container to workspace $ws18
+bindsym $sup+Shift+9    move container to workspace $ws19
+bindsym $sup+Shift+0    move container to workspace $ws20
+
+workspace $ws1 output $monitor1
+workspace $ws2 output $monitor1
+workspace $ws3 output $monitor1
+workspace $ws4 output $monitor1
+workspace $ws5 output $monitor1
+workspace $ws6 output $monitor1
+workspace $ws7 output $monitor1
+workspace $ws8 output $monitor1
+workspace $ws9 output $monitor1
+workspace $ws10 output $monitor1
+
+workspace $ws11 output $monitor2
+workspace $ws12 output $monitor2
+workspace $ws13 output $monitor2
+workspace $ws14 output $monitor2
+workspace $ws15 output $monitor2
+workspace $ws16 output $monitor2
+workspace $ws17 output $monitor2
+workspace $ws18 output $monitor2
+workspace $ws19 output $monitor2
+workspace $ws20 output $monitor2
+
+###---Workspace specific Apps---###
+
+# clementine
+assign [class="Spotify|spotify"] → $ws2
+for_window [class="Spotify"] move to workspace $ws2
+
+# slack
+assign [class="Slack|slack"] → $ws3
+for_window [class="Slack"] move to workspace $ws3
+
+###---Colors---###
+set $bg     #2f343f
+set $fg     #404552
+set $hi     #fce94f
+set $ac     #4084d6
+set $tx     #2d323d
+set $ia     #9e9e9e
+set $be     #8faf9f
+set $yw     #f8f893
+set $gn     #81c181
+set $rd     #bf9b76
+set $id     #f9f8ff
+set $ce     #ceecee
+set $sl     #7f7f7f
+set $BLACK      #000000
+set $WHITE      #ffffff
+
+# set some nice colors      border  background  text    indicator
+client.focused              $ac     $ac         $tx     $id
+client.unfocused            $bg     $bg         $ia     $id
+client.focused_inactive     $bg     $bg         $ac     $id
+client.urgent               $ac     $ac         $tx     $id
+#border & indicator are ignored
+client.placeholder          $bg     $bg         $bg     $bg
+client.background         $bg
+
+
+###---ALT Bindings---###
+bindsym $alt+Return             exec $psst $term -e fish
+bindsym $alt+Shift+Return       exec $psst $term -e ipython
+
+bindsym $alt+a                  focus parent
+
+bindsym $alt+b                  border toggle
+
+bindsym $alt+c          split h
+
+bindsym $alt+d                  exec $psst rofi -show drun
+#bindsym $alt+d                  exec $psst j4-dmenu-desktop
+bindsym $alt+Shift+d            exec $psst rofi -show run
+
+bindsym $alt+e                  layout toggle split
+
+bindsym $alt+f                  fullscreen toggle
+
+#bindsym $alt+g
+
+bindsym $alt+h                  focus left
+bindsym $alt+Shift+h            move left
+
+bindsym $alt+i                  resize grow height 10 px or 10 ppt
+
+bindsym $alt+j                  focus down
+bindsym $alt+Shift+j            move down
+
+bindsym $alt+k                  focus up
+bindsym $alt+Shift+k            move up
+
+bindsym $alt+l                  focus right
+bindsym $alt+Shift+l            move right
+
+bindsym $alt+m                  [instance="ipy"] scratchpad show; move to position $xpos $ypos
+
+bindsym $alt+n                  [instance="quick"] scratchpad show; move position $xpos $ypos
+
+bindsym $alt+o                  resize shrink height 10 px or 10 ppt
+
+bindsym $alt+p                  resize grow width 10 px or 10 ppt
+
+bindsym $alt+q                  kill
+
+bindsym $alt+r                  exec $psst subl
+
+bindsym $alt+s                  layout stacking
+
+bindsym $alt+t                  layout tabbed
+
+bindsym $alt+u                  resize shrink width 10 px or 10 ppt
+
+bindsym $alt+v                  split v
+
+bindsym $alt+w          exec $psst $browser
+
+bindsym $alt+x          exec $psst $term -e ranger
+
+#bindsym $alt+y
+
+#bindsym $alt+z
+
+#bindsym $alt+semicolon          
+#bindsym $alt+Shift+semicolon   
+
+bindsym $alt+Tab        exec $psst rofi -show window 
+#bindsym $alt+Shift+Tab     
+
+bindsym $alt+space              focus mode_toggle
+bindsym $alt+Shift+space        floating toggle
+
+bindsym $alt+Left               focus left
+bindsym $alt+Shift+Left         move left
+
+bindsym $alt+Down               focus down
+bindsym $alt+Shift+Down         move down
+
+bindsym $alt+Up                 focus up
+bindsym $alt+Shift+Up           move up
+
+bindsym $alt+Right              focus right
+bindsym $alt+Shift+Right        move right
+
+
+###---Special Bindings---###
+bindsym XF86AudioRaiseVolume    exec $psst "amixer -D pulse sset Master '3%+'"
+bindsym XF86AudioLowerVolume    exec $psst "amixer -D pulse sset Master '3%-'"
+bindsym XF86AudioMute         exec $psst "amixer -D pulse set Master toggle"
+bindsym XF86MonBrightnessUp     exec $psst light -A 10
+bindsym XF86MonBrightnessDown     exec $psst light -U 10
+
+###Spotify
+bindsym XF86AudioPlay         exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioNext         exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym XF86AudioPrev         exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioStop         exec $psst "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+
+###Clementine
+#bindsym XF86AudioPlay        exec $psst "clementine --play-pause"
+#bindsym XF86AudioStop        exec $psst "clementine --stop"
+#bindsym XF86AudioPrev        exec $psst "clementine --previous"
+#bindsym XF86AudioNext        exec $psst "clementine --next"
+
+###---System Bindings---###
+bindsym $sup+Shift+l            exec $psst "i3lock -i $lockscreen"
+
+bindsym $sup+Shift+s            exec $psst "i3lock -i $lockscreen && systemctl suspend"
+
+bindsym $sup+Shift+h            exec $psst "i3lock -i $lockscreen && systemctl hibernate"
+
+bindsym $sup+Shift+c            reload
+
+bindsym $sup+Shift+r            restart
+
+bindsym $sup+Shift+e            exit
+
+#bindsym $sup+x                  
