@@ -6,6 +6,7 @@
 # Mod1 = Alt, Mod4 = Win key
 set $alt Mod1
 set $sup Mod4
+set $crl Ctrl
 set $psst --no-startup-id
 set $term urxvt
 set $dropterm urxvt
@@ -13,8 +14,9 @@ set $wallpaper ~/.config/i3/walls/wall.png
 set $lockscreen ~/.config/i3/walls/lock.png
 set $colorbg ~/.config/i3/colors/color3.jpg
 set $browser firefox
-set $monitor1 DP-1
-set $monitor2 HDMI-1
+set $monitor1 DP-4
+set $monitor2 DP-2
+set $monitor3 DP-0
 font pango:Roboto 8
 floating_modifier $alt
 
@@ -33,7 +35,7 @@ new_float       normal
 
 ###---Autostart---###
 exec_always $psst   wal -i $colorbg
-exec $psst        compton --config ~/.config/compton.conf &
+exec $psst        picom --config ~/.config/compton.conf &
 exec $psst        ~/.config/i3/scripts/redshift.sh &
 exec_always $psst       ~/.config/i3/scripts/bar.sh &
 #exec $psst              feh --bg-scale $wallpaper
@@ -43,17 +45,19 @@ exec $psst        slack
 exec $psst        fcitx -d
 
 ###---Dropdowns--###
-set $xpos 500
-set $ypos 32
+set $xpos	  2600
+set $ypos 	35
+set $xsize 	1200
+set $ysize	400
 
 for_window [instance="quick"] floating enable sticky enable
-for_window [instance="quick"] resize set 900 400
+for_window [instance="quick"] resize set $xsize $ysize
 for_window [instance="quick"] move to position $xpos $ypos
 for_window [instance="quick"] move scratchpad
 exec $psst $dropterm -name "quick" -e fish
 
 for_window [instance="ipy"] floating enable sticky enable
-for_window [instance="ipy"] resize set 900 400
+for_window [instance="ipy"] resize set $xsize $ysize
 for_window [instance="ipy"] move to position $xpos $ypos
 for_window [instance="ipy"] move scratchpad
 exec $psst $dropterm -name "ipy" -e ipython
@@ -82,6 +86,17 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
+set $ws21 "21"
+set $ws22 "22"
+set $ws23 "23"
+set $ws24 "24"
+set $ws25 "25"
+set $ws26 "26"
+set $ws27 "27"
+set $ws28 "28"
+set $ws29 "29"
+set $ws30 "30"
+
 # switch to workspace
 bindsym $alt+1          workspace $ws1
 bindsym $alt+2          workspace $ws2; focus
@@ -104,6 +119,17 @@ bindsym $sup+7          workspace $ws17
 bindsym $sup+8          workspace $ws18
 bindsym $sup+9          workspace $ws19
 bindsym $sup+0          workspace $ws20
+
+bindsym $crl+1          workspace $ws21
+bindsym $crl+2          workspace $ws22
+bindsym $crl+3          workspace $ws23
+bindsym $crl+4          workspace $ws24
+bindsym $crl+5          workspace $ws25
+bindsym $crl+6          workspace $ws26
+bindsym $crl+7          workspace $ws27
+bindsym $crl+8          workspace $ws28
+bindsym $crl+9          workspace $ws29
+bindsym $crl+0          workspace $ws30
 
 # move focused container to workspace
 bindsym $alt+Shift+1    move container to workspace $ws1
@@ -128,6 +154,17 @@ bindsym $sup+Shift+8    move container to workspace $ws18
 bindsym $sup+Shift+9    move container to workspace $ws19
 bindsym $sup+Shift+0    move container to workspace $ws20
 
+bindsym $crl+Shift+1    move container to workspace $ws21
+bindsym $crl+Shift+2    move container to workspace $ws22
+bindsym $crl+Shift+3    move container to workspace $ws23
+bindsym $crl+Shift+4    move container to workspace $ws24
+bindsym $crl+Shift+5    move container to workspace $ws25
+bindsym $crl+Shift+6    move container to workspace $ws26
+bindsym $crl+Shift+7    move container to workspace $ws27
+bindsym $crl+Shift+8    move container to workspace $ws28
+bindsym $crl+Shift+9    move container to workspace $ws29
+bindsym $crl+Shift+0    move container to workspace $ws30
+
 workspace $ws1 output $monitor1
 workspace $ws2 output $monitor1
 workspace $ws3 output $monitor1
@@ -149,6 +186,17 @@ workspace $ws17 output $monitor2
 workspace $ws18 output $monitor2
 workspace $ws19 output $monitor2
 workspace $ws20 output $monitor2
+
+workspace $ws21 output $monitor3
+workspace $ws22 output $monitor3
+workspace $ws23 output $monitor3
+workspace $ws24 output $monitor3
+workspace $ws25 output $monitor3
+workspace $ws26 output $monitor3
+workspace $ws27 output $monitor3
+workspace $ws28 output $monitor3
+workspace $ws29 output $monitor3
+workspace $ws30 output $monitor3
 
 ###---Workspace specific Apps---###
 
@@ -291,7 +339,7 @@ bindsym XF86AudioStop         exec $psst "dbus-send --print-reply --dest=org.mpr
 #bindsym XF86AudioNext        exec $psst "clementine --next"
 
 ###---System Bindings---###
-bindsym $sup+Shift+l            exec $psst "i3lock -i $lockscreen"
+bindsym $sup+Shift+l            exec $psst "li3lock -i $lockscreen"
 
 bindsym $sup+Shift+s            exec $psst "i3lock -i $lockscreen && systemctl suspend"
 
